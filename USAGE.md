@@ -70,3 +70,12 @@ Then `/bolt-start <first bolt>` and `/operations build`.
 - **A command doesn't appear** → reload the window; check `/plugin` shows `rn-repack-aidlc` enabled.
 - **`/setup-skills` fails an `npx`** → usually network or missing `npx`; retry that single line.
 - **Any other error** → open an issue with the exact message.
+
+## Maintaining this guide
+
+**Update this guide whenever the plugin's usability changes** — a new, renamed, or removed command; a change in how commands are invoked (e.g. the namespace); install/update steps; flow behavior; or anything a user types or sees. This file is the source of truth for *how to use* the plugin.
+
+When you edit it:
+- Mirror the change in the other language (`USAGE.es.md`) — enforced by `scripts/check-i18n-docs.mjs`.
+- Keep every command documented — enforced by `scripts/check-docs-commands.mjs`.
+- Both run in CI and pre-commit, so an out-of-date guide blocks the merge.

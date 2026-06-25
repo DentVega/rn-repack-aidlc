@@ -70,3 +70,12 @@ Luego `/bolt-start <primer bolt>` y `/operations build`.
 - **Un comando no aparece** → recarga la ventana; revisa en `/plugin` que `rn-repack-aidlc` esté enabled.
 - **`/setup-skills` falla un `npx`** → suele ser red o falta `npx`; reintenta esa línea suelta.
 - **Cualquier otro error** → abre un issue con el mensaje exacto.
+
+## Mantenimiento de esta guía
+
+**Actualiza esta guía cada vez que cambie la usabilidad del plugin** — un comando nuevo, renombrado o eliminado; un cambio en cómo se invocan los comandos (p. ej. el namespace); pasos de instalación/actualización; comportamiento de un flow; o cualquier cosa que el usuario escriba o vea. Este archivo es la fuente de verdad de *cómo se usa* el plugin.
+
+Cuando lo edites:
+- Refleja el cambio en el otro idioma (`USAGE.md`) — lo fuerza `scripts/check-i18n-docs.mjs`.
+- Mantén todos los comandos documentados — lo fuerza `scripts/check-docs-commands.mjs`.
+- Ambos corren en CI y pre-commit, así que una guía desactualizada bloquea el merge.

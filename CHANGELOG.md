@@ -11,6 +11,9 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/rn-repack-aidlc:<name>` (e.g. `/rn-repack-aidlc:aidlc-init`). Noted in both
   READMEs and usage guides, with a reminder to restart the session if a command
   shows "Unknown command".
+- Add a "Maintaining this guide" section to `USAGE.md` / `USAGE.es.md`: the usage
+  guide must be updated on any usability change, kept in sync across languages,
+  and with every command documented (both enforced by the docs guards).
 
 ## [0.3.1] — 2026-06-25
 
