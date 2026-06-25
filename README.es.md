@@ -1,0 +1,96 @@
+# rn-repack-aidlc
+
+[English](README.md) · **Español**
+
+Un plugin de Claude Code para **desarrollo spec-driven en React Native + Re.Pack** usando la metodología **AI-DLC** de [specs.md](https://specs.md).
+
+Empaqueta los agentes y el flujo de AI-DLC, pre-carga los *standards* de un stack Re.Pack (Module Federation) y conecta cuatro skills de callstack probadas en producción — con sus *triggers* delimitados para que ninguno choque.
+
+## Qué incluye
+
+| Capa | Provisto por |
+|---|---|
+| **Proceso** (4 agentes, bolts, DDD, memory-bank) | Este plugin — AI-DLC adaptado de specs.md |
+| **Build** | Re.Pack (webpack/Rspack + Module Federation v2) — documentado en los standards |
+| **Perf — escribir código** | `vercel-react-native-skills` (referenciada) |
+| **Perf — depurar** | `react-native-best-practices` (referenciada) |
+| **Tests unitarios/componente** | `react-native-testing-library` (referenciada) |
+| **E2E en device** | `agent-device` (referenciada) |
+
+Las skills están **referenciadas, no incrustadas** — instálalas con `/setup-skills` (usa `npx skills add`, siempre la última versión).
+
+## Tres flows (un nivel de ceremonia cada uno)
+
+specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/` y las mismas cuatro skills — solo cambia el peso del proceso. Usa `/spec-flow` si no estás seguro de cuál elegir.
+
+| Flow | Cuándo usarlo | Comando |
+|---|---|---|
+| **Simple** | Cambio pequeño y bien entendido. Solo spec (requirements/design/tasks), sin seguimiento de ejecución. | `/simple-spec` |
+| **FIRE** | Feature mediana sobre una app Re.Pack existente (brownfield). Rápido, adaptativo, 0–2 checkpoints. | `/fire` |
+| **AI-DLC** | Remote federado nuevo / dominio complejo. 4 agentes, bolts, DDD, trazabilidad completa. | `/aidlc-inception` |
+
+## Agentes
+
+- `aidlc-master` — orquesta AI-DLC; enruta entre fases; mantiene `memory-bank/` coherente.
+- `aidlc-inception` — QUÉ/POR QUÉ: intents → requirements → units/stories → plan de bolts.
+- `aidlc-construction` — CÓMO: Model → Design → ADR → Implement → Test, por bolt.
+- `aidlc-operations` — build con Re.Pack, servir chunks federados, verificar, monitorear.
+- `fire-executor` — flow FIRE: ejecución adaptativa, consciente de brownfield, con 0–2 checkpoints.
+
+## Comandos
+
+- `/aidlc-init` — crea `memory-bank/` y siembra los cuatro standards.
+- `/setup-skills` — instala las cuatro skills referenciadas.
+- `/spec-flow [tarea]` — elige y arranca el flow adecuado (Simple / FIRE / AI-DLC).
+- `/simple-spec [cambio]` — flow Simple: genera requirements/design/tasks.
+- `/fire [feature]` — flow FIRE: ejecución rápida y adaptativa sobre una app existente.
+- `/aidlc-inception [objetivo]` — AI-DLC: ejecuta la fase de Inception.
+- `/bolt-start [bolt]` — AI-DLC: ejecuta un bolt por las etapas DDD.
+
+## Instalación
+
+Este repo es un **marketplace de plugins** de Claude Code. Agrégalo y luego instala el plugin:
+
+```text
+/plugin marketplace add DentVega/rn-repack-aidlc
+/plugin install rn-repack-aidlc@rn-repack-aidlc
+```
+
+(O desde un clon local: `/plugin marketplace add /ruta/a/rn-repack-aidlc`.)
+
+## Inicio rápido
+
+```text
+/setup-skills
+/aidlc-init mi app de tienda offline-first sobre Re.Pack
+/aidlc-inception flujo de checkout como remote federado
+/bolt-start <primer bolt del plan>
+```
+
+## Notas de diseño — por qué las skills no chocan
+
+- Las dos skills de perf **se solapan** en listas/memoización/animaciones. Resuelto con **triggers delimitados**: reglas de Vercel al *escribir*, best-practices al *depurar*. Ver `templates/standards/coding-standards.md`.
+- `agent-device` (E2E en device) y `react-native-testing-library` (componentes en Jest) son **mitades complementarias** de la pirámide de testing.
+- **Re.Pack reemplaza a Metro.** Todos los standards lo dicen explícitamente para que los agentes nunca generen config de Metro.
+- AI-DLC se sitúa **por encima** de todo como proceso de orquestación; las skills se enchufan en etapas DDD concretas vía `memory-bank/standards/`.
+
+## Estructura
+
+```
+.claude-plugin/   plugin.json, marketplace.json
+agents/           aidlc-{master,inception,construction,operations}, fire-executor
+commands/         aidlc-init, setup-skills, spec-flow, simple-spec, fire,
+                  aidlc-inception, bolt-start
+templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards
+templates/simple/     requirements, design, tasks
+```
+
+## Licencia
+
+MIT — ver [LICENSE](LICENSE).
+
+## Créditos
+
+- Metodología: [specs.md / AI-DLC](https://specs.md) ([fabriqaai/specs.md](https://github.com/fabriqaai/specs.md))
+- Bundler: [Re.Pack](https://re-pack.dev)
+- Skills: [callstackincubator/agent-skills](https://github.com/callstackincubator/agent-skills), [callstackincubator/agent-device](https://github.com/callstackincubator/agent-device), [callstack/react-native-testing-library](https://github.com/callstack/react-native-testing-library)

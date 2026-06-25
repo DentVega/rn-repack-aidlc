@@ -1,5 +1,7 @@
 # rn-repack-aidlc
 
+**English** · [Español](README.es.md)
+
 A Claude Code plugin for **spec-driven React Native + Re.Pack development** using the **AI-DLC** methodology from [specs.md](https://specs.md).
 
 It bundles the AI-DLC agents and workflow, pre-seeds standards for a Re.Pack (Module Federation) stack, and wires in four battle-tested callstack skills — with their triggers delimited so nothing collides.
@@ -75,10 +77,12 @@ This repo is a Claude Code **plugin marketplace**. Add it, then install the plug
 ## Layout
 
 ```
-.claude-plugin/plugin.json
-agents/         aidlc-{master,inception,construction,operations}.md
-commands/       aidlc-init, aidlc-inception, bolt-start, setup-skills
+.claude-plugin/   plugin.json, marketplace.json
+agents/           aidlc-{master,inception,construction,operations}, fire-executor
+commands/         aidlc-init, setup-skills, spec-flow, simple-spec, fire,
+                  aidlc-inception, bolt-start
 templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards
+templates/simple/     requirements, design, tasks
 ```
 
 ## License
