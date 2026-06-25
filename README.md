@@ -50,6 +50,7 @@ specs.md offers three flows. All reuse the same `memory-bank/standards/` and the
 - `/fire [feature]` — FIRE flow: rapid adaptive execution on an existing app.
 - `/aidlc-inception [objective]` — AI-DLC: run the Inception phase.
 - `/bolt-start [bolt]` — AI-DLC: execute a bolt through the DDD stages.
+- `/operations [bolt|build|verify|deploy]` — AI-DLC: build with Re.Pack, serve chunks, verify, deploy (Dev → Staging → Prod).
 
 ## Install
 
@@ -85,10 +86,15 @@ This repo is a Claude Code **plugin marketplace**. Add it, then install the plug
 agents/           aidlc-{master,inception,construction,operations}, fire-executor
 commands/         aidlc-init, setup-skills, spec-flow, simple-spec, fire,
                   aidlc-inception, bolt-start
+commands/         …, operations
 skills/           i18n-doc-sync (bundled)
+scripts/          check-i18n-docs.mjs, pre-commit (i18n hard guard)
+.github/workflows/  i18n-docs.yml (CI enforcement)
 templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards
 templates/simple/     requirements, design, tasks
 ```
+
+The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-i18n-docs.mjs` compares the structural skeleton (headings, code blocks, tables) of every `<name>.md` / `<name>.<lang>.md` family and fails in CI (and optionally pre-commit) if they drift.
 
 ## License
 

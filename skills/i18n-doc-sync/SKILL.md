@@ -41,6 +41,15 @@ This applies to:
 2. Add the new language to the switcher line in **every** existing variant.
 3. From now on, this language is part of the sync set — include it in all future edits.
 
+## Hard guard (enforcement)
+
+This is a guidance skill, but the repo also ships a structural check that fails when variants drift:
+
+- `scripts/check-i18n-docs.mjs` — compares the heading-level sequence, code-block count, and table count across each `<name>.md` / `<name>.<lang>.md` family. Run it after editing docs: `node scripts/check-i18n-docs.mjs`.
+- It runs in CI (`.github/workflows/i18n-docs.yml`) on any `*.md` change, and can be wired as a pre-commit hook (`scripts/pre-commit`).
+
+When you finish a multilingual doc edit, run the script to confirm sync before considering the task done.
+
 ## Scope
 
 Applies to all human-facing Markdown docs with variants (`README`, `CONTRIBUTING`, docs pages, etc.). It does **not** apply to single-language machine-facing files (agent prompts in `agents/`, command files in `commands/`, skill files) — those have no localized counterparts and are not translated.
