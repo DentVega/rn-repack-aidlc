@@ -6,6 +6,13 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.1] — 2026-06-25
+
+### Fixed
+- Plugin failed to install with `agents: Invalid input` — the manifest declared
+  `commands`/`agents` as string paths. Removed both keys; Claude Code
+  auto-discovers the `commands/`, `agents/`, and `skills/` directories.
+
 ## [0.2.0] — 2026-06-25
 
 ### Added
@@ -45,6 +52,7 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.2.1
 [0.2.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.2.0
 [0.1.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.1.0
