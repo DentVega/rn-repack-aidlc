@@ -1,5 +1,5 @@
 ---
-description: Scaffold the AI-DLC memory-bank for a React Native + Re.Pack project, seeding the four standards from this plugin's templates.
+description: Scaffold the AI-DLC memory-bank for a React Native + Re.Pack project, seeding the four coding standards and the two session-context files from this plugin's templates.
 argument-hint: "[project description]"
 ---
 
@@ -10,19 +10,24 @@ Steps:
 1. Create the `memory-bank/` tree if it does not exist:
    ```
    memory-bank/
+   ├── activeContext.md
+   ├── progress.md
    ├── standards/
    ├── intents/
    ├── bolts/
    └── operations/
    ```
-2. Copy the four standards templates from this plugin's `templates/standards/` into `memory-bank/standards/`:
+2. Copy the four coding-standards templates from `templates/standards/` into `memory-bank/standards/`:
    - `tech-stack.md`
    - `coding-standards.md`
    - `system-architecture.md`
    - `testing-standards.md`
-   Then fill in any project-specific blanks based on what you can detect in the repo (package.json, app config, existing Re.Pack config) and on this argument: $ARGUMENTS
-3. Generate a project `CLAUDE.md` from this plugin's `templates/CLAUDE.md.template`: copy it to the repo root (if none exists), fill the `[PROJECT]` blanks from what you detect, and keep it pointing at `memory-bank/standards/`. This is the file Claude loads every session — it makes the standards persistent.
-4. Remind the user to install the referenced skills with `/setup-skills` if they haven't, and that `/repack-init` can scaffold the actual Re.Pack + Module Federation config.
-5. Tell the user the next step is `/aidlc-inception` to capture the first intent.
+   Fill in any project-specific blanks based on what you can detect in the repo (package.json, app config, existing Re.Pack config) and on this argument: $ARGUMENTS
+3. Copy the two session-context files from `templates/` into `memory-bank/`:
+   - `activeContext.md` → `memory-bank/activeContext.md` (short-term agent memory: current focus, recent decisions, blockers, next step)
+   - `progress.md` → `memory-bank/progress.md` (long-term tracker: milestones, bolt statuses, deferred tasks)
+4. Generate a project `CLAUDE.md` from this plugin's `templates/CLAUDE.md.template`: copy it to the repo root (if none exists), fill the `[PROJECT]` blanks from what you detect, and keep it pointing at `memory-bank/standards/`. This is the file Claude loads every session — it makes the standards persistent.
+5. Remind the user to install the referenced skills with `/setup-skills` if they haven't, and that `/repack-init` can scaffold the actual Re.Pack + Module Federation config.
+6. Tell the user the next step is `/aidlc-inception` to capture the first intent.
 
 Do not write any feature code in this command. Stop after the workspace and standards exist, and show the user the resulting tree.
