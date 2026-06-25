@@ -1,0 +1,50 @@
+# Changelog
+
+All notable changes to **rn-repack-aidlc** are documented here.
+Format follows [Keep a Changelog](https://keepachangelog.com/), and the project
+adheres to [Semantic Versioning](https://semver.org/).
+
+## [Unreleased]
+
+## [0.2.0] — 2026-06-25
+
+### Added
+- **`/repack-init`** command + `templates/repack/` — scaffolds a real Re.Pack +
+  Module Federation v2 setup (host + remote configs, runtime `ScriptManager`
+  resolver, `SETUP.md`), based on the official `callstack/repack` example.
+- **Per-project `CLAUDE.md`** generation (`templates/CLAUDE.md.template`), wired
+  into `/aidlc-init` so the standards load every session (persistent memory).
+- **`/operations`** command driving the `aidlc-operations` agent (Dev → Staging
+  → Prod progression, rollback).
+- **Simple** and **FIRE** flows — `/simple-spec`, `/fire` + `fire-executor`
+  agent + `templates/simple/`, plus a `/spec-flow` selector. All three specs.md
+  flows are now covered.
+- **Four ported skills** from the `expo-config-template` project:
+  `react-best-practices`, `composition-patterns`, `github-actions`,
+  `upgrading-react-native` (Expo/EAS-specific skills excluded — this stack uses
+  Re.Pack, not Metro). Now 8 referenced skills.
+- **`i18n-doc-sync`** bundled skill + a hard guard: `scripts/check-i18n-docs.mjs`,
+  CI workflow, and a pre-commit hook keep localized Markdown variants in sync.
+- **Bilingual docs** — `README.es.md` with a language toggle.
+- **Marketplace** manifest (`.claude-plugin/marketplace.json`) — installable via
+  `/plugin marketplace add`.
+- **MIT license.**
+- **Skill-precedence** block in `coding-standards.md` (project standards win).
+
+### Changed
+- The four AI-DLC agents refined against the canonical `specs.md` prompts:
+  personas, Inception's 4-checkpoint + auto-continue rule, Construction's
+  never-auto-select / never-create-bolt rule, Operations' strict environment
+  progression.
+
+## [0.1.0] — 2026-06-25
+
+### Added
+- Initial plugin: AI-DLC flow for React Native + Re.Pack — 4 agents
+  (`aidlc-master/inception/construction/operations`), `/aidlc-init`,
+  `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
+  `memory-bank/standards/` templates. References the four core callstack skills.
+
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.2.0
+[0.1.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.1.0

@@ -43,8 +43,9 @@ specs.md offers three flows. All reuse the same `memory-bank/standards/` and the
 
 ## Commands
 
-- `/aidlc-init` — scaffold `memory-bank/` and seed the four standards.
-- `/setup-skills` — install the four referenced skills.
+- `/aidlc-init` — scaffold `memory-bank/`, seed the standards, and generate a project `CLAUDE.md`.
+- `/setup-skills` — install the eight referenced skills.
+- `/repack-init` — scaffold a real Re.Pack + Module Federation setup (host + remote).
 - `/spec-flow [task]` — pick and start the right flow (Simple / FIRE / AI-DLC).
 - `/simple-spec [change]` — Simple flow: generate requirements/design/tasks.
 - `/fire [feature]` — FIRE flow: rapid adaptive execution on an existing app.
@@ -95,6 +96,10 @@ templates/simple/     requirements, design, tasks
 ```
 
 The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-i18n-docs.mjs` compares the structural skeleton (headings, code blocks, tables) of every `<name>.md` / `<name>.<lang>.md` family and fails in CI (and optionally pre-commit) if they drift.
+
+## Versioning
+
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.2.0**.
 
 ## License
 

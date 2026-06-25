@@ -43,8 +43,9 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 
 ## Comandos
 
-- `/aidlc-init` — crea `memory-bank/` y siembra los cuatro standards.
-- `/setup-skills` — instala las cuatro skills referenciadas.
+- `/aidlc-init` — crea `memory-bank/`, siembra los standards y genera un `CLAUDE.md` del proyecto.
+- `/setup-skills` — instala las ocho skills referenciadas.
+- `/repack-init` — scaffoldea una config real de Re.Pack + Module Federation (host + remote).
 - `/spec-flow [tarea]` — elige y arranca el flow adecuado (Simple / FIRE / AI-DLC).
 - `/simple-spec [cambio]` — flow Simple: genera requirements/design/tasks.
 - `/fire [feature]` — flow FIRE: ejecución rápida y adaptativa sobre una app existente.
@@ -95,6 +96,10 @@ templates/simple/     requirements, design, tasks
 ```
 
 La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scripts/check-i18n-docs.mjs` compara el esqueleto estructural (headings, bloques de código, tablas) de cada familia `<name>.md` / `<name>.<lang>.md` y falla en CI (y opcionalmente en pre-commit) si divergen.
+
+## Versionado
+
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.2.0**.
 
 ## Licencia
 
