@@ -6,6 +6,15 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.1] — 2026-06-25
+
+### Fixed
+- Commands and agents were not loaded after install (`Unknown command: /aidlc-init`).
+  0.2.1 removed the `commands`/`agents` keys to pass validation, but they are
+  **required as arrays of file paths** (matching the official Vercel plugin) —
+  auto-discovery alone does not register them. Declared all 9 commands and 5
+  agents explicitly.
+
 ## [0.3.0] — 2026-06-25
 
 ### Added
@@ -65,7 +74,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.3.1
 [0.3.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.3.0
 [0.2.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.2.1
 [0.2.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.2.0
