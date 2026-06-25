@@ -6,6 +6,12 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Documentation
+- Clarify that plugin commands are **namespaced** — invoke as
+  `/rn-repack-aidlc:<name>` (e.g. `/rn-repack-aidlc:aidlc-init`). Noted in both
+  READMEs and usage guides, with a reminder to restart the session if a command
+  shows "Unknown command".
+
 ## [0.3.1] — 2026-06-25
 
 ### Fixed

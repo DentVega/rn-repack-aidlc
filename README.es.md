@@ -43,6 +43,8 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 
 ## Comandos
 
+> Los comandos del plugin van **con namespace**: invócalos como `/rn-repack-aidlc:<nombre>` (p. ej. `/rn-repack-aidlc:aidlc-init`). Escribe `/` y deja que el autocompletado lo llene. Los `/nombre` cortos de abajo son por brevedad.
+
 - `/aidlc-init` — crea `memory-bank/`, siembra los standards y genera un `CLAUDE.md` del proyecto.
 - `/setup-skills` — instala las ocho skills referenciadas.
 - `/repack-init` — scaffoldea una config real de Re.Pack + Module Federation (host + remote).

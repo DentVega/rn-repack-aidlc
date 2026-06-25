@@ -4,6 +4,8 @@
 
 Cómo aplicar **rn-repack-aidlc** en un proyecto real. Corre estos slash commands en una sesión de Claude Code abierta sobre **la carpeta de tu app** (no sobre este repo del plugin). Instala el plugin primero — ver [README](README.es.md#instalación).
 
+> **Invocar comandos:** van con namespace — escribe `/rn-repack-aidlc:aidlc-init` (el autocompletado tras `/` ayuda). Esta guía usa el form corto `/aidlc-init` por brevedad. Si un comando dice "Unknown command", reinicia la sesión de Claude Code para que cargue el plugin.
+
 ## Track A — App Expo existente
 
 Aprovechas metodología + skills, **sin** Re.Pack (Expo gestionado usa Metro).
