@@ -17,7 +17,7 @@ Empaqueta los agentes y el flujo de AI-DLC, pre-carga los *standards* de un stac
 | **Tests unitarios/componente** | `react-native-testing-library` (referenciada) |
 | **E2E en device** | `agent-device` (referenciada) |
 
-Las skills están **referenciadas, no incrustadas** — instálalas con `/setup-skills` (usa `npx skills add`, siempre la última versión).
+Las cuatro skills de RN están **referenciadas, no incrustadas** — instálalas con `/setup-skills` (usa `npx skills add`, siempre la última versión). El plugin también incluye una skill **incrustada**, `i18n-doc-sync`, que mantiene sincronizadas las variantes de Markdown por idioma (p. ej. este README y `README.md`) en cada edición.
 
 ## Tres flows (un nivel de ceremonia cada uno)
 
@@ -81,6 +81,7 @@ Este repo es un **marketplace de plugins** de Claude Code. Agrégalo y luego ins
 agents/           aidlc-{master,inception,construction,operations}, fire-executor
 commands/         aidlc-init, setup-skills, spec-flow, simple-spec, fire,
                   aidlc-inception, bolt-start
+skills/           i18n-doc-sync (incluida)
 templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards
 templates/simple/     requirements, design, tasks
 ```
