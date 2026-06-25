@@ -67,6 +67,10 @@ commands/       aidlc-init, aidlc-inception, bolt-start, setup-skills
 templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards
 ```
 
+## License
+
+MIT — see [LICENSE](LICENSE).
+
 ## Credits
 
 - Methodology: [specs.md / AI-DLC](https://specs.md) ([fabriqaai/specs.md](https://github.com/fabriqaai/specs.md))

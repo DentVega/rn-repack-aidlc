@@ -16,6 +16,8 @@
     "ddd",
     "testing"
   ],
+  "license": "MIT",
+  "homepage": "https://github.com/DentVega/rn-repack-aidlc",
   "commands": "./commands",
   "agents": "./agents"
 }
