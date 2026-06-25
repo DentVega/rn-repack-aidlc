@@ -1,0 +1,21 @@
+{
+  "name": "rn-repack-aidlc",
+  "version": "0.1.0",
+  "description": "Spec-driven development for React Native + Re.Pack using the AI-DLC methodology (specs.md). Bundles 4 AI-DLC agents, bolt/DDD commands, RN+Re.Pack standards templates, and references 4 callstack skills (RN best-practices, Vercel RN rules, agent-device, React Native Testing Library).",
+  "author": {
+    "name": "dentvega6",
+    "email": "dentvega6@gmail.com"
+  },
+  "keywords": [
+    "react-native",
+    "re-pack",
+    "module-federation",
+    "ai-dlc",
+    "specs.md",
+    "spec-driven-development",
+    "ddd",
+    "testing"
+  ],
+  "commands": "./commands",
+  "agents": "./agents"
+}
