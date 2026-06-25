@@ -73,6 +73,8 @@ This repo is a Claude Code **plugin marketplace**. Add it, then install the plug
 /bolt-start <first bolt from the plan>
 ```
 
+Full step-by-step (Expo and bare-RN tracks): **[USAGE.md](USAGE.md)**.
+
 ## Design notes — why the skills don't clash
 
 - The two perf skills **overlap** on lists/memoization/animations. Resolved by **delimited triggers**: Vercel rules while *writing*, best-practices while *debugging*. See `templates/standards/coding-standards.md`.
@@ -99,7 +101,7 @@ The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-
 
 ## Versioning
 
-Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.2.1**.
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.3.0**.
 
 ## License
 

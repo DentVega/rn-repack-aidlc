@@ -4,10 +4,14 @@
 #   ln -sf ../../scripts/pre-commit .git/hooks/pre-commit
 # (or copy it). Requires Node.
 
-# Only run when Markdown is staged.
-if git diff --cached --name-only | grep -q '\.md$'; then
+# Run when Markdown or any command file is staged.
+if git diff --cached --name-only | grep -qE '\.md$|^commands/'; then
   node scripts/check-i18n-docs.mjs || {
     echo "commit blocked: localized Markdown variants are out of sync." >&2
+    exit 1
+  }
+  node scripts/check-docs-commands.mjs || {
+    echo "commit blocked: a command is missing from the usage docs." >&2
     exit 1
   }
 fi

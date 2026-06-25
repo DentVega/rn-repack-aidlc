@@ -6,6 +6,19 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0] — 2026-06-25
+
+### Added
+- **`USAGE.md` / `USAGE.es.md`** — step-by-step guide for applying the plugin in
+  a project (Expo and bare-RN tracks), linked from both READMEs.
+- **Command-coverage guard** (`scripts/check-docs-commands.mjs`) — fails CI and
+  pre-commit if any command in `commands/` is not documented in the usage docs
+  and READMEs, so docs can't silently fall behind the commands.
+
+### Changed
+- The docs CI workflow and pre-commit hook now run both guards (i18n sync +
+  command coverage) and trigger on `commands/**` changes too.
+
 ## [0.2.1] — 2026-06-25
 
 ### Fixed
@@ -52,7 +65,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.3.0
 [0.2.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.2.1
 [0.2.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.2.0
 [0.1.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.1.0
