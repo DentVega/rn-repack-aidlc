@@ -17,19 +17,33 @@ It bundles the AI-DLC agents and workflow, pre-seeds standards for a Re.Pack (Mo
 
 Skills are **referenced, not vendored** — install them with `/setup-skills` (uses `npx skills add`, always latest).
 
+## Three flows (one ceremony level each)
+
+specs.md offers three flows. All reuse the same `memory-bank/standards/` and the same four skills — only the process weight changes. Use `/spec-flow` if unsure which to pick.
+
+| Flow | Use when | Command |
+|---|---|---|
+| **Simple** | Small, well-understood change. Spec only (requirements/design/tasks), no execution tracking. | `/simple-spec` |
+| **FIRE** | Medium feature on an existing (brownfield) Re.Pack app. Rapid, adaptive, 0–2 checkpoints. | `/fire` |
+| **AI-DLC** | New federated remote / complex domain. 4 agents, bolts, DDD, full traceability. | `/aidlc-inception` |
+
 ## Agents
 
-- `aidlc-master` — orchestrates; routes between phases; keeps `memory-bank/` coherent.
+- `aidlc-master` — orchestrates AI-DLC; routes between phases; keeps `memory-bank/` coherent.
 - `aidlc-inception` — WHAT/WHY: intents → requirements → units/stories → bolt plan.
 - `aidlc-construction` — HOW: Model → Design → ADR → Implement → Test, per bolt.
 - `aidlc-operations` — Re.Pack build, serve federated chunks, verify, monitor.
+- `fire-executor` — FIRE flow: adaptive, brownfield-aware execution with 0–2 checkpoints.
 
 ## Commands
 
 - `/aidlc-init` — scaffold `memory-bank/` and seed the four standards.
 - `/setup-skills` — install the four referenced skills.
-- `/aidlc-inception [objective]` — run the Inception phase.
-- `/bolt-start [bolt]` — execute a bolt through the DDD stages.
+- `/spec-flow [task]` — pick and start the right flow (Simple / FIRE / AI-DLC).
+- `/simple-spec [change]` — Simple flow: generate requirements/design/tasks.
+- `/fire [feature]` — FIRE flow: rapid adaptive execution on an existing app.
+- `/aidlc-inception [objective]` — AI-DLC: run the Inception phase.
+- `/bolt-start [bolt]` — AI-DLC: execute a bolt through the DDD stages.
 
 ## Install
 
