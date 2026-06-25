@@ -12,12 +12,16 @@ Empaqueta los agentes y el flujo de AI-DLC, pre-carga los *standards* de un stac
 |---|---|
 | **Proceso** (4 agentes, bolts, DDD, memory-bank) | Este plugin — AI-DLC adaptado de specs.md |
 | **Build** | Re.Pack (webpack/Rspack + Module Federation v2) — documentado en los standards |
-| **Perf — escribir código** | `vercel-react-native-skills` (referenciada) |
-| **Perf — depurar** | `react-native-best-practices` (referenciada) |
+| **Perf — escribir código (RN)** | `vercel-react-native-skills` (referenciada) |
+| **Perf — depurar (RN)** | `react-native-best-practices` (referenciada) |
 | **Tests unitarios/componente** | `react-native-testing-library` (referenciada) |
 | **E2E en device** | `agent-device` (referenciada) |
+| **Perf — React general** | `react-best-practices` (referenciada) |
+| **Composición de componentes** | `composition-patterns` (referenciada) |
+| **CI/CD** | `github-actions` (referenciada) |
+| **Upgrades de RN** | `upgrading-react-native` (referenciada) |
 
-Las cuatro skills de RN están **referenciadas, no incrustadas** — instálalas con `/setup-skills` (usa `npx skills add`, siempre la última versión). El plugin también incluye una skill **incrustada**, `i18n-doc-sync`, que mantiene sincronizadas las variantes de Markdown por idioma (p. ej. este README y `README.md`) en cada edición.
+Las ocho skills de RN/React están **referenciadas, no incrustadas** — instálalas con `/setup-skills` (usa `npx skills add`, a nivel usuario, siempre la última versión). Las últimas cuatro están curadas del proyecto hermano `expo-config-template` (las skills específicas de Expo/EAS se excluyen a propósito — este stack usa Re.Pack, no Metro). El plugin también incluye una skill **incrustada**, `i18n-doc-sync`, que mantiene sincronizadas las variantes de Markdown por idioma (p. ej. este README y `README.md`) en cada edición.
 
 ## Tres flows (un nivel de ceremonia cada uno)
 

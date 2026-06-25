@@ -12,12 +12,16 @@ It bundles the AI-DLC agents and workflow, pre-seeds standards for a Re.Pack (Mo
 |---|---|
 | **Process** (4 agents, bolts, DDD, memory-bank) | This plugin — AI-DLC adapted from specs.md |
 | **Build** | Re.Pack (webpack/Rspack + Module Federation v2) — documented in standards |
-| **Perf — write code** | `vercel-react-native-skills` (referenced) |
-| **Perf — debug** | `react-native-best-practices` (referenced) |
+| **Perf — write code (RN)** | `vercel-react-native-skills` (referenced) |
+| **Perf — debug (RN)** | `react-native-best-practices` (referenced) |
 | **Unit/component tests** | `react-native-testing-library` (referenced) |
 | **Device E2E** | `agent-device` (referenced) |
+| **Perf — React-general** | `react-best-practices` (referenced) |
+| **Component composition** | `composition-patterns` (referenced) |
+| **CI/CD** | `github-actions` (referenced) |
+| **RN version upgrades** | `upgrading-react-native` (referenced) |
 
-The four RN skills are **referenced, not vendored** — install them with `/setup-skills` (uses `npx skills add`, always latest). The plugin also ships one **bundled** skill, `i18n-doc-sync`, which keeps localized Markdown variants (e.g. this README and `README.es.md`) in sync on every edit.
+The eight RN/React skills are **referenced, not vendored** — install them with `/setup-skills` (uses `npx skills add`, user-level, always latest). The last four are curated from the sibling `expo-config-template` project (the Expo/EAS-specific skills are intentionally excluded — this stack uses Re.Pack, not Metro). The plugin also ships one **bundled** skill, `i18n-doc-sync`, which keeps localized Markdown variants (e.g. this README and `README.es.md`) in sync on every edit.
 
 ## Three flows (one ceremony level each)
 
