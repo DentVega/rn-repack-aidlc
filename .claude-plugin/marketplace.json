@@ -1,0 +1,33 @@
+{
+  "name": "rn-repack-aidlc",
+  "owner": {
+    "name": "DentVega",
+    "email": "dentvega6@gmail.com"
+  },
+  "metadata": {
+    "description": "Spec-driven React Native + Re.Pack development for Claude Code, powered by the AI-DLC methodology (specs.md).",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "rn-repack-aidlc",
+      "source": "./",
+      "description": "AI-DLC agents, bolt/DDD commands, and RN + Re.Pack standards templates, wiring in four callstack skills (RN best-practices, Vercel RN rules, agent-device, React Native Testing Library) with delimited triggers.",
+      "version": "0.1.0",
+      "author": {
+        "name": "DentVega",
+        "email": "dentvega6@gmail.com"
+      },
+      "keywords": [
+        "react-native",
+        "re-pack",
+        "module-federation",
+        "ai-dlc",
+        "specs.md",
+        "spec-driven-development",
+        "ddd",
+        "testing"
+      ]
+    }
+  ]
+}

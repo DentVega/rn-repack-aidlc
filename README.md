@@ -31,6 +31,17 @@ Skills are **referenced, not vendored** — install them with `/setup-skills` (u
 - `/aidlc-inception [objective]` — run the Inception phase.
 - `/bolt-start [bolt]` — execute a bolt through the DDD stages.
 
+## Install
+
+This repo is a Claude Code **plugin marketplace**. Add it, then install the plugin:
+
+```text
+/plugin marketplace add DentVega/rn-repack-aidlc
+/plugin install rn-repack-aidlc@rn-repack-aidlc
+```
+
+(Or from a local clone: `/plugin marketplace add /path/to/rn-repack-aidlc`.)
+
 ## Quick start
 
 ```text
