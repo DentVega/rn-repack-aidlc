@@ -15,6 +15,10 @@
 - **Lists:** FlashList. **Navigation:** native navigators. **State:** `[PROJECT]`.
 - **Federation:** host + on-demand remote chunks. Host vs. remote boundaries live in `memory-bank/standards/system-architecture.md`.
 
+## Session start (read first)
+- Read `memory-bank/activeContext.md` (current focus, recent decisions, blockers, next step) and `memory-bank/progress.md` (milestones, bolt statuses) to restore where the work left off.
+- Update both as you make decisions, change focus, or finish a stage/bolt — they are the project's short- and long-term memory across sessions.
+
 ## How to work here (AI-DLC)
 - Pick a flow by size: `/simple-spec` (small), `/fire` (medium, brownfield), AI-DLC `/aidlc-inception` → `/bolt-start` → `/operations` (large/new remote). Unsure → `/spec-flow`.
 - All work traces to a story → unit → intent under `memory-bank/`.

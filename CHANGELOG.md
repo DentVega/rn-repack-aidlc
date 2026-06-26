@@ -6,6 +6,18 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-06-26
+
+### Added
+- **Memory Bank** — `templates/activeContext.md` (short-term: current focus,
+  recent decisions, blockers, next step) and `templates/progress.md` (long-term:
+  milestones, bolt statuses, deferred tasks). `/aidlc-init` copies both into
+  `memory-bank/`, and all five agents read them at start and update them at
+  phase/bolt boundaries. (PR #1, by @ricardofco.)
+- `CLAUDE.md.template` now has a "Session start" section instructing Claude to
+  read and update the two memory files every session — so the Memory Bank
+  actually drives cross-session continuity.
+
 ### Documentation
 - Clarify that plugin commands are **namespaced** — invoke as
   `/rn-repack-aidlc:<name>` (e.g. `/rn-repack-aidlc:aidlc-init`). Noted in both
@@ -83,7 +95,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.4.0
 [0.3.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.3.1
 [0.3.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.3.0
 [0.2.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.2.1

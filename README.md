@@ -45,7 +45,7 @@ specs.md offers three flows. All reuse the same `memory-bank/standards/` and the
 
 > Plugin commands are **namespaced**: invoke as `/rn-repack-aidlc:<name>` (e.g. `/rn-repack-aidlc:aidlc-init`). Type `/` and let autocomplete fill it in. The short `/name` forms below are for brevity.
 
-- `/aidlc-init` — scaffold `memory-bank/`, seed the standards, and generate a project `CLAUDE.md`.
+- `/aidlc-init` — scaffold `memory-bank/`, seed the standards + Memory Bank (`activeContext.md`, `progress.md`), and generate a project `CLAUDE.md`.
 - `/setup-skills` — install the eight referenced skills.
 - `/repack-init` — scaffold a real Re.Pack + Module Federation setup (host + remote).
 - `/spec-flow [task]` — pick and start the right flow (Simple / FIRE / AI-DLC).
@@ -103,7 +103,7 @@ The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-
 
 ## Versioning
 
-Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.3.1**.
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.4.0**.
 
 ## License
 
