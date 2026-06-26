@@ -75,7 +75,7 @@ Este repo es un **marketplace de plugins** de Claude Code. Agrégalo y luego ins
 /bolt-start <primer bolt del plan>
 ```
 
-Guía paso a paso completa (tracks Expo y bare-RN): **[USAGE.es.md](USAGE.es.md)**.
+Guía paso a paso completa (tracks Expo y bare-RN): **[USAGE.es.md](USAGE.es.md)**. Análisis a fondo de cada agente, comando y skill: **[docs/ARCHITECTURE.es.md](docs/ARCHITECTURE.es.md)**.
 
 ## Notas de diseño — por qué las skills no chocan
 
@@ -103,7 +103,7 @@ La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scrip
 
 ## Versionado
 
-Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.4.0**.
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.5.0**.
 
 ## Licencia
 

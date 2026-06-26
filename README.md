@@ -75,7 +75,7 @@ This repo is a Claude Code **plugin marketplace**. Add it, then install the plug
 /bolt-start <first bolt from the plan>
 ```
 
-Full step-by-step (Expo and bare-RN tracks): **[USAGE.md](USAGE.md)**.
+Full step-by-step (Expo and bare-RN tracks): **[USAGE.md](USAGE.md)**. Deep dive on every agent, command, and skill: **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
 
 ## Design notes — why the skills don't clash
 
@@ -103,7 +103,7 @@ The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-
 
 ## Versioning
 
-Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.4.0**.
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.5.0**.
 
 ## License
 

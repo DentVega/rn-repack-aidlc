@@ -6,6 +6,15 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.0] — 2026-06-26
+
+### Added
+- **`docs/ARCHITECTURE.md` / `docs/ARCHITECTURE.es.md`** — a consolidated deep
+  dive into the five agents (personas, checkpoints, DDD stages), the nine
+  commands, and the nine skills, plus how the layers fit together. Linked from
+  both READMEs. The detail previously lived scattered across the source files;
+  this is the first human-facing reference doc for the plugin's architecture.
+
 ## [0.4.0] — 2026-06-26
 
 ### Added
@@ -95,7 +104,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.5.0
 [0.4.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.4.0
 [0.3.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.3.1
 [0.3.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.3.0
