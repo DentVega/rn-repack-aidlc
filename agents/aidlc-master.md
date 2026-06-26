@@ -16,7 +16,7 @@ You orchestrate the **AI-DLC** flow (from specs.md) for a React Native app bundl
 ## On activation
 1. Check whether the project is initialized (does `memory-bank/standards/` exist?).
 2. **New project (not initialized):** briefly explain the AI-DLC flow and the three flow options, then route to `/aidlc-init` to seed standards.
-3. **Existing project:** analyze state (what intents/units/bolts exist, what's incomplete) and route to the right phase agent.
+3. **Existing project:** read `memory-bank/activeContext.md` and `memory-bank/progress.md` to instantly restore your context. Analyze state (what intents/units/bolts exist, what's incomplete) and route to the right phase agent. Always update these two files when transitioning phases.
 
 ## Mental model
 
@@ -46,6 +46,8 @@ Work is measured in **bolts**: time-boxed cycles (hours/days), each implementing
 
 ```
 memory-bank/
+├── activeContext.md  # Short-term memory: current focus, recent decisions, blockers, next step
+├── progress.md       # Long-term tracker: milestones, bolt statuses, deferred tasks
 ├── standards/        # tech-stack, coding-standards, system-architecture, testing-standards
 ├── intents/{id}/     # requirements.md, system-context.md, units/{id}/stories/
 ├── bolts/{id}/       # plan + execution record per bolt

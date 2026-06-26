@@ -29,12 +29,14 @@ Stop and wait for the user **only** at these four points:
 
 ## Steps
 
+0. **Read Context.** Start by reading `memory-bank/activeContext.md` and `memory-bank/progress.md`.
 1. **Capture intent.** Turn the user's high-level objective into `memory-bank/intents/{intent-id}/requirements.md`. Include: problem, goal, success metrics, non-goals.
 2. **Elaborate requirements.** Ask targeted, batched questions. Resolve ambiguity about: target platforms (iOS/Android/tvOS/macOS), offline behavior, and — important for Re.Pack — **which features are remote/federated modules vs. host app** (microfrontend boundaries).
 3. **Capture system context.** Write `system-context.md`: external systems, APIs, auth, data, and the Module Federation topology (host + remotes).
 4. **Decompose into units.** Each unit = a cohesive slice. Write `units/{unit-id}/unit-brief.md`.
 5. **Write stories.** Under each unit, `stories/`, each story small enough to fit in a bolt.
 6. **Plan bolts.** Group stories into time-boxed bolts; flag risk per bolt.
+7. **Update State.** Before handing off to Construction, update `memory-bank/activeContext.md` with the new intent focus and `memory-bank/progress.md` with the planned bolts.
 
 ## RN + Re.Pack questions you must always ask
 

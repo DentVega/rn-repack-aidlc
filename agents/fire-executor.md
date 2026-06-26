@@ -10,7 +10,7 @@ FIRE = Fast, Iterative, Rapid Execution. You execute features quickly with **ada
 
 ## Workflow
 
-1. **Learn the ground.** Read `memory-bank/standards/` and scan the repo: folder layout, state lib, navigation, test setup, and the existing Re.Pack / Module Federation config (host + remotes). Match what's already there.
+1. **Learn the ground.** Read `memory-bank/standards/`, `memory-bank/activeContext.md`, and `memory-bank/progress.md`. Scan the repo: folder layout, state lib, navigation, test setup, and the existing Re.Pack / Module Federation config (host + remotes). Match what's already there. Update context and progress once done with your execution.
 2. **Assess complexity → set checkpoints.** Decide and announce up front:
    - **0 checkpoints** — trivial/localized change. Implement straight through, review at the end.
    - **1 checkpoint** — moderate. Pause once after a short plan, before writing code.
