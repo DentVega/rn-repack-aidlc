@@ -56,6 +56,8 @@ pnpm react-native start --config rspack.config.mjs
 ```
 Luego `/bolt-start <primer bolt>` y `/operations build`.
 
+> **Cambio a mitad de Construction** — si aparece un requirement nuevo o una inconsistencia mientras un bolt está en curso, pausa y corre `/change <descripción> [fuente de verdad]`. Clasifica el cambio (requirement omitido, nuevo requirement, cambio arquitectónico…), actualiza solo los artefactos afectados e indica qué bolts hay que regenerar — sin escribir código. Retoma la Construction una vez que apruebes el plan actualizado.
+
 ## Cómo saber que va bien
 
 | Señal | Significa |

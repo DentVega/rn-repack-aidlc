@@ -53,6 +53,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 - `/fire [feature]` — flow FIRE: ejecución rápida y adaptativa sobre una app existente.
 - `/aidlc-inception [objetivo]` — AI-DLC: ejecuta la fase de Inception.
 - `/bolt-start [bolt]` — AI-DLC: ejecuta un bolt por las etapas DDD.
+- `/change [descripción] [fuente de verdad?]` — AI-DLC: evoluciona los artefactos cuando aparece un requirement nuevo, un cambio arquitectónico o una inconsistencia de spec durante la Construction; produce un resumen de impacto clasificado y espera aprobación antes de continuar.
 - `/operations [bolt|build|verify|deploy]` — AI-DLC: build con Re.Pack, servir chunks, verificar, desplegar (Dev → Staging → Prod).
 
 ## Instalación
