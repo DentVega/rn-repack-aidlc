@@ -56,6 +56,8 @@ pnpm react-native start --config rspack.config.mjs
 ```
 Then `/bolt-start <first bolt>` and `/operations build`.
 
+> **Mid-Construction change** — if a new requirement or inconsistency surfaces while a bolt is in progress, pause and run `/change <description> [source of truth]`. It classifies the change (omitted requirement, new requirement, architectural change…), updates only the affected artifacts, and tells you which bolts to regenerate — without writing any code. Resume Construction once you approve the updated plan.
+
 ## How to know it's working
 
 | Signal | Means |
