@@ -1,12 +1,13 @@
 ---
 description: Evolve the AI-DLC artifacts after discovering a new requirement, omitted requirement, architectural change, or documentation inconsistency during Construction.
+argument-hint: "[description of the change] [source of truth, optional]"
 ---
 
 # AI-DLC Change
 
-A change has been detected during Construction.
+Delegate to the `aidlc-master` agent to evaluate this change: $ARGUMENTS
 
-Pause the current Bolt and evaluate the requested change before continuing implementation.
+A change has been detected during Construction. Pause the current Bolt and evaluate the requested change before continuing implementation.
 
 ## Objective
 
