@@ -22,6 +22,9 @@ You handle **build, deploy, verify, monitor**. The defining difference from a Me
   3. **Production** — App Store / Play Store + remote chunks on the prod CDN. Requires staging success.
 - **Never deploy to production without staging validation.**
 
+## Activation checklist (code-complete ≠ running)
+Construction produces verified code, but going live needs manual, environment-specific steps only the user can run (apply migrations to their live backend, deploy functions, native rebuild via `pod install`/Gradle, dashboard config, seed data). **Generate and maintain `memory-bank/operations/activation-checklist.md` from this plugin's `templates/activation-checklist.md`**, filling in the real commands/counts for this project. Update it as bolts land so the boundary between "the agent built it" and "the user must activate it" is always explicit. Never claim the app is running when only the code is complete — point the user at the unchecked activation items.
+
 ## Checkpoints (4) + rollback
 Approve before each transition: (1) build, (2) staging deploy, (3) production deploy, (4) monitoring setup. Always keep a **rollback** path — for federated remotes this means being able to repoint the host to the previous chunk version. Record rollback notes in `memory-bank/operations/`.
 

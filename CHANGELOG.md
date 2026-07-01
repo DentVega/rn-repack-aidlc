@@ -6,6 +6,17 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.7.0] — 2026-06-26
+
+### Added
+- **Activation checklist** (`templates/activation-checklist.md`) — a structured
+  template the Operations agent fills into `memory-bank/operations/`, making the
+  "code-complete ≠ running" boundary explicit: the manual, environment-specific
+  steps only the user can run (apply migrations, deploy functions, native
+  rebuild, dashboard config, seed). Wired into `aidlc-operations` and the
+  `/operations` command. Emerged as a retro learning from the Betmeet build,
+  which wrote such a checklist by hand.
+
 ### Documentation
 - README (EN/ES) accuracy pass: corrected stale counts in the intro and
   "What's inside" table — **5 agents** (was 4) and **eight skills** (was four).
@@ -129,7 +140,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.7.0
 [0.6.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.6.0
 [0.5.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.5.0
 [0.4.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.4.0
