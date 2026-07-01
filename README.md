@@ -31,7 +31,7 @@ specs.md offers three flows. All reuse the same `memory-bank/standards/` and the
 |---|---|---|
 | **Simple** | Small, well-understood change. Spec only (requirements/design/tasks), no execution tracking. | `/simple-spec` |
 | **FIRE** | Medium feature on an existing (brownfield) Re.Pack app. Rapid, adaptive, 0–2 checkpoints. | `/fire` |
-| **AI-DLC** | New federated remote / complex domain. 4 agents, bolts, DDD, full traceability. | `/aidlc-inception` |
+| **AI-DLC** | New federated remote / complex domain. 5 agents, bolts, DDD, full traceability. | `/aidlc-inception` |
 
 ## Agents
 
