@@ -4,13 +4,13 @@
 
 Un plugin de Claude Code para **desarrollo spec-driven en React Native + Re.Pack** usando la metodología **AI-DLC** de [specs.md](https://specs.md).
 
-Empaqueta los agentes y el flujo de AI-DLC, pre-carga los *standards* de un stack Re.Pack (Module Federation) y conecta cuatro skills de callstack probadas en producción — con sus *triggers* delimitados para que ninguno choque.
+Empaqueta los agentes y el flujo de AI-DLC, pre-carga los *standards* de un stack Re.Pack (Module Federation) y conecta ocho skills de RN/React probadas en producción — con sus *triggers* delimitados para que ninguno choque.
 
 ## Qué incluye
 
 | Capa | Provisto por |
 |---|---|
-| **Proceso** (4 agentes, bolts, DDD, memory-bank) | Este plugin — AI-DLC adaptado de specs.md |
+| **Proceso** (5 agentes, bolts, DDD, memory-bank) | Este plugin — AI-DLC adaptado de specs.md |
 | **Build** | Re.Pack (webpack/Rspack + Module Federation v2) — documentado en los standards |
 | **Perf — escribir código (RN)** | `vercel-react-native-skills` (referenciada) |
 | **Perf — depurar (RN)** | `react-native-best-practices` (referenciada) |
@@ -25,7 +25,7 @@ Las ocho skills de RN/React están **referenciadas, no incrustadas** — instál
 
 ## Tres flows (un nivel de ceremonia cada uno)
 
-specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/` y las mismas cuatro skills — solo cambia el peso del proceso. Usa `/spec-flow` si no estás seguro de cuál elegir.
+specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/` y las mismas skills — solo cambia el peso del proceso. Usa `/spec-flow` si no estás seguro de cuál elegir.
 
 | Flow | Cuándo usarlo | Comando |
 |---|---|---|

@@ -4,13 +4,13 @@
 
 A Claude Code plugin for **spec-driven React Native + Re.Pack development** using the **AI-DLC** methodology from [specs.md](https://specs.md).
 
-It bundles the AI-DLC agents and workflow, pre-seeds standards for a Re.Pack (Module Federation) stack, and wires in four battle-tested callstack skills — with their triggers delimited so nothing collides.
+It bundles the AI-DLC agents and workflow, pre-seeds standards for a Re.Pack (Module Federation) stack, and wires in eight battle-tested RN/React skills — with their triggers delimited so nothing collides.
 
 ## What's inside
 
 | Layer | Provided by |
 |---|---|
-| **Process** (4 agents, bolts, DDD, memory-bank) | This plugin — AI-DLC adapted from specs.md |
+| **Process** (5 agents, bolts, DDD, memory-bank) | This plugin — AI-DLC adapted from specs.md |
 | **Build** | Re.Pack (webpack/Rspack + Module Federation v2) — documented in standards |
 | **Perf — write code (RN)** | `vercel-react-native-skills` (referenced) |
 | **Perf — debug (RN)** | `react-native-best-practices` (referenced) |
@@ -25,7 +25,7 @@ The eight RN/React skills are **referenced, not vendored** — install them with
 
 ## Three flows (one ceremony level each)
 
-specs.md offers three flows. All reuse the same `memory-bank/standards/` and the same four skills — only the process weight changes. Use `/spec-flow` if unsure which to pick.
+specs.md offers three flows. All reuse the same `memory-bank/standards/` and the same skills — only the process weight changes. Use `/spec-flow` if unsure which to pick.
 
 | Flow | Use when | Command |
 |---|---|---|

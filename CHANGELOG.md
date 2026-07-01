@@ -6,6 +6,10 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Documentation
+- README (EN/ES) accuracy pass: corrected stale counts in the intro and
+  "What's inside" table — **5 agents** (was 4) and **eight skills** (was four).
+
 ## [0.6.0] — 2026-06-26
 
 ### Fixed
