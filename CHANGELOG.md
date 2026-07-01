@@ -6,6 +6,12 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Documentation
+- Add `docs/DEFERRED.md` — a maintainer backlog of intentionally-deferred ideas
+  with their reasoning. First entry: backend standards (keep the plugin
+  frontend-first for now; revisit conditionally if building backends becomes
+  common). Linked from both READMEs.
+
 ## [0.8.0] — 2026-06-26
 
 ### Added
