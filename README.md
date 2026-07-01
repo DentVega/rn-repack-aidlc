@@ -10,7 +10,7 @@ It bundles the AI-DLC agents and workflow, pre-seeds standards for a Re.Pack (Mo
 
 | Layer | Provided by |
 |---|---|
-| **Process** (5 agents, bolts, DDD, memory-bank) | This plugin — AI-DLC adapted from specs.md |
+| **Process** (6 agents, bolts, DDD, memory-bank) | This plugin — AI-DLC adapted from specs.md |
 | **Build** | Re.Pack (webpack/Rspack + Module Federation v2) — documented in standards |
 | **Perf — write code (RN)** | `vercel-react-native-skills` (referenced) |
 | **Perf — debug (RN)** | `react-native-best-practices` (referenced) |
@@ -31,7 +31,7 @@ specs.md offers three flows. All reuse the same `memory-bank/standards/` and the
 |---|---|---|
 | **Simple** | Small, well-understood change. Spec only (requirements/design/tasks), no execution tracking. | `/simple-spec` |
 | **FIRE** | Medium feature on an existing (brownfield) Re.Pack app. Rapid, adaptive, 0–2 checkpoints. | `/fire` |
-| **AI-DLC** | New federated remote / complex domain. 5 agents, bolts, DDD, full traceability. | `/aidlc-inception` |
+| **AI-DLC** | New federated remote / complex domain. 6 agents, bolts, DDD, full traceability. | `/aidlc-inception` |
 
 ## Agents
 
@@ -40,6 +40,7 @@ specs.md offers three flows. All reuse the same `memory-bank/standards/` and the
 - `aidlc-construction` — HOW: Model → Design → ADR → Implement → Test, per bolt.
 - `aidlc-operations` — Re.Pack build, serve federated chunks, verify, monitor.
 - `fire-executor` — FIRE flow: adaptive, brownfield-aware execution with 0–2 checkpoints.
+- `parity-analyst` — migration gap analysis: compares the source app's surface against mobile coverage and flags what's MISSING.
 
 ## Commands
 
@@ -56,6 +57,7 @@ specs.md offers three flows. All reuse the same `memory-bank/standards/` and the
 - `/bolt-start [bolt]` — AI-DLC: execute a bolt through the DDD stages.
 - `/change [description] [source of truth?]` — AI-DLC: evolve artifacts when a new requirement, architectural change, or spec inconsistency surfaces mid-Construction; produces a classified impact summary and waits for approval before resuming.
 - `/operations [bolt|build|verify|deploy]` — AI-DLC: build with Re.Pack, serve chunks, verify, deploy (Dev → Staging → Prod).
+- `/parity [source]` — migration gap analysis: source-app surface vs mobile coverage, flags MISSING items.
 
 ## Install
 
@@ -106,7 +108,7 @@ The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-
 
 ## Versioning
 
-Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.9.0**. Parked ideas and deferred decisions live in [docs/DEFERRED.md](docs/DEFERRED.md).
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.10.0**. Parked ideas and deferred decisions live in [docs/DEFERRED.md](docs/DEFERRED.md).
 
 ## License
 

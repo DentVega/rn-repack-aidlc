@@ -2,7 +2,7 @@
 
 **English** · [Español](ARCHITECTURE.es.md)
 
-A deep dive into how **rn-repack-aidlc** is built: the five agents, the nine commands, the nine skills, and how they fit together. For *how to use* the plugin, see [USAGE.md](../USAGE.md); for a quick overview, the [README](../README.md).
+A deep dive into how **rn-repack-aidlc** is built: the six agents, the twelve commands, the nine skills, and how they fit together. For *how to use* the plugin, see [USAGE.md](../USAGE.md); for a quick overview, the [README](../README.md).
 
 ## Mental model
 
@@ -25,7 +25,7 @@ Construction (HOW)     → per bolt: Model → Design → ADR → Implement → 
 Operations             → build (Re.Pack) → Dev → Staging → Prod → monitor
 ```
 
-## The five agents
+## The six agents
 
 Each agent has a **persona** (role / communication / principle) and reads `memory-bank/activeContext.md` + `progress.md` on start. They are refined from the canonical specs.md prompts.
 
@@ -53,7 +53,12 @@ Each agent has a **persona** (role / communication / principle) and reads `memor
 - **Role:** rapid, adaptive, **brownfield-first** execution that follows existing conventions.
 - **Adaptive ceremony:** 0–2 checkpoints by complexity; never exceeds 2 (recommends AI-DLC if more is needed).
 
-## The eleven commands
+### 6. `parity-analyst` — migration gap analysis
+- **Role:** migration auditor (migrations only).
+- **What it does:** compares a source app's surface (screens/units/endpoints) against the mobile project's coverage; writes a coverage matrix and flags anything **MISSING**.
+- **Principle:** prefer flagging MISSING over assuming coverage.
+
+## The twelve commands
 
 Invoked with the plugin namespace: `/rn-repack-aidlc:<command>`.
 
@@ -70,6 +75,7 @@ Invoked with the plugin namespace: `/rn-repack-aidlc:<command>`.
 | `bolt-start [bolt]` | AI-DLC | Executes a bolt through the five DDD stages |
 | `change [desc] [source?]` | AI-DLC | Evolves the artifacts mid-Construction (new/omitted requirement, arch change); classified impact summary, waits for approval |
 | `operations [target]` | AI-DLC | Build/serve/verify/deploy (Dev → Staging → Prod) |
+| `parity [source]` | Migration | Compares source-app surface vs mobile coverage; flags MISSING (migrations only) |
 
 Typical AI-DLC flow: `aidlc-init` → `setup-skills` → `aidlc-inception` → `bolt-start` (×N) → `operations`.
 

@@ -6,6 +6,20 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.10.0] — 2026-07-01
+
+### Added
+- **Migration parity toolkit** — a dedicated `parity-analyst` agent plus a
+  `/parity [source]` command that compare a source app's surface (screens,
+  units, endpoints) against the mobile project's coverage and produce a coverage
+  matrix in `memory-bank/operations/parity-matrix.md`, flagging anything
+  **MISSING** (in the source but not covered and not a recorded decision). Its
+  principle: prefer flagging MISSING over assuming coverage. Migrations only —
+  a greenfield project has no source to compare. The `aidlc-inception` agent now
+  suggests running `/parity` after decomposition for migration intents.
+  Automates the manual "web-vs-mobile gap analysis" the Betmeet migration did by
+  hand. Now 6 agents / 12 commands; ARCHITECTURE updated accordingly.
+
 ## [0.9.0] — 2026-06-26
 
 ### Added
@@ -181,7 +195,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.10.0
 [0.9.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.9.0
 [0.8.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.8.0
 [0.7.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.7.0

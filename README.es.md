@@ -10,7 +10,7 @@ Empaqueta los agentes y el flujo de AI-DLC, pre-carga los *standards* de un stac
 
 | Capa | Provisto por |
 |---|---|
-| **Proceso** (5 agentes, bolts, DDD, memory-bank) | Este plugin — AI-DLC adaptado de specs.md |
+| **Proceso** (6 agentes, bolts, DDD, memory-bank) | Este plugin — AI-DLC adaptado de specs.md |
 | **Build** | Re.Pack (webpack/Rspack + Module Federation v2) — documentado en los standards |
 | **Perf — escribir código (RN)** | `vercel-react-native-skills` (referenciada) |
 | **Perf — depurar (RN)** | `react-native-best-practices` (referenciada) |
@@ -31,7 +31,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 |---|---|---|
 | **Simple** | Cambio pequeño y bien entendido. Solo spec (requirements/design/tasks), sin seguimiento de ejecución. | `/simple-spec` |
 | **FIRE** | Feature mediana sobre una app Re.Pack existente (brownfield). Rápido, adaptativo, 0–2 checkpoints. | `/fire` |
-| **AI-DLC** | Remote federado nuevo / dominio complejo. 5 agentes, bolts, DDD, trazabilidad completa. | `/aidlc-inception` |
+| **AI-DLC** | Remote federado nuevo / dominio complejo. 6 agentes, bolts, DDD, trazabilidad completa. | `/aidlc-inception` |
 
 ## Agentes
 
@@ -40,6 +40,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 - `aidlc-construction` — CÓMO: Model → Design → ADR → Implement → Test, por bolt.
 - `aidlc-operations` — build con Re.Pack, servir chunks federados, verificar, monitorear.
 - `fire-executor` — flow FIRE: ejecución adaptativa, consciente de brownfield, con 0–2 checkpoints.
+- `parity-analyst` — análisis de gap de migración: compara la superficie del origen contra la cobertura mobile y marca lo que FALTA.
 
 ## Comandos
 
@@ -56,6 +57,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 - `/bolt-start [bolt]` — AI-DLC: ejecuta un bolt por las etapas DDD.
 - `/change [descripción] [fuente de verdad?]` — AI-DLC: evoluciona los artefactos cuando aparece un requirement nuevo, un cambio arquitectónico o una inconsistencia de spec durante la Construction; produce un resumen de impacto clasificado y espera aprobación antes de continuar.
 - `/operations [bolt|build|verify|deploy]` — AI-DLC: build con Re.Pack, servir chunks, verificar, desplegar (Dev → Staging → Prod).
+- `/parity [origen]` — análisis de gap de migración: superficie del origen vs cobertura mobile, marca lo que FALTA.
 
 ## Instalación
 
@@ -106,7 +108,7 @@ La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scrip
 
 ## Versionado
 
-Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.9.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.10.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
 
 ## Licencia
 

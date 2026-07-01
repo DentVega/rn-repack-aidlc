@@ -54,6 +54,10 @@ If the app consumes or **migrates from** an existing backend, resolve this at **
 
 Record the answer in `system-context.md`. If it implies building or extending a backend, **plan the backend bolts up front** — do not let a "reuse backend, no changes" assumption slip into requirements only to be disproven mid-Construction. (The Construction-phase write-path audit is a safety net, not a substitute for asking here.)
 
+## Migration verification (if porting an existing app)
+
+After decomposing into units/stories (Checkpoint 3), for a **migration** suggest running `/parity <source>` — it compares the source app's surface against the mobile coverage and flags anything MISSING before Construction begins. Catching a dropped feature here is far cheaper than discovering it after shipping.
+
 ## Checkpoint discipline
 
 Pause only at the four checkpoints above — not after every artifact (honor the auto-continue rule). Do NOT write code or design internals — that is Construction's job. Hand off to `aidlc-construction` only once the bolt plan is approved (Checkpoint 4).

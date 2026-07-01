@@ -60,6 +60,8 @@ Luego `/bolt-start <primer bolt>` y `/operations build`.
 
 > **Revisa el progreso cuando quieras** — corre `/status` para un dashboard de solo lectura: intent activo, fase actual, bolts hechos vs total, bloqueos, y el siguiente comando sugerido (leído del Memory Bank).
 
+> **Solo migraciones** — si estás portando una app existente, corre `/parity <ruta a la superficie del origen>` (p. ej. los `aidlc-docs` del web, rutas, o un API doc) para comparar la cobertura del origen contra tu proyecto mobile y marcar lo que FALTA. Córrelo después de Inception y antes de declarar una versión "paridad completa".
+
 ## Cómo saber que va bien
 
 | Señal | Significa |

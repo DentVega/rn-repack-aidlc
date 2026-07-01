@@ -60,6 +60,8 @@ Then `/bolt-start <first bolt>` and `/operations build`.
 
 > **Check progress anytime** — run `/status` for a read-only dashboard of the active intent, current phase, bolts done vs total, blockers, and the suggested next command (read from the Memory Bank).
 
+> **Migrations only** — if you're porting an existing app, run `/parity <path to the source surface>` (e.g. the web app's `aidlc-docs`, routes, or API doc) to compare source coverage against your mobile project and flag anything MISSING. Run it after Inception and before declaring a version "parity-complete".
+
 ## How to know it's working
 
 | Signal | Means |
