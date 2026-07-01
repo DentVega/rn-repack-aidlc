@@ -64,6 +64,8 @@ Luego `/bolt-start <primer bolt>` y `/operations build`.
 
 > **¿Te preocupa la deuda técnica?** Corre `/audit [ruta]` — corre tu toolchain (tsc, eslint, código muerto, deps circulares) más un review RN-específico (perf, estilos hardcodeados, tests faltantes, a11y) y escribe un `tech-debt.md` priorizado. On-demand, no inspección en tiempo real del editor.
 
+> **¿Cerrando un intent?** Corre `/reflect` para una retrospectiva de solo lectura — qué se construyó, qué decisiones aguantaron, dónde hubo fricción, y mejoras recomendadas (updates de standards, cambios de proceso, ideas diferidas). Los retros son donde el proceso mejora.
+
 ## Cómo saber que va bien
 
 | Señal | Significa |

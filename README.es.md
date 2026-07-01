@@ -60,6 +60,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 - `/operations [bolt|build|verify|deploy]` — AI-DLC: build con Re.Pack, servir chunks, verificar, desplegar (Dev → Staging → Prod).
 - `/parity [origen]` — análisis de gap de migración: superficie del origen vs cobertura mobile, marca lo que FALTA.
 - `/audit [ruta]` — auditoría de deuda técnica / salud del código: toolchain + review RN → reporte priorizado.
+- `/reflect [intent]` — retrospectiva del ciclo: qué se construyó, fricciones, recomendaciones. Solo lectura.
 
 ## Instalación
 
@@ -110,7 +111,7 @@ La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scrip
 
 ## Versionado
 
-Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.12.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.13.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
 
 ## Licencia
 

@@ -64,6 +64,8 @@ Then `/bolt-start <first bolt>` and `/operations build`.
 
 > **Worried about tech debt?** Run `/audit [path]` — it runs your toolchain (tsc, eslint, dead-code, circular deps) plus an RN-specific review (perf, hardcoded styles, missing tests, a11y) and writes a prioritized `tech-debt.md`. On-demand, not real-time editor inspection.
 
+> **Closing an intent?** Run `/reflect` for a read-only retrospective — what was built, which decisions held up, where the flow had friction, and recommended improvements (standards updates, process changes, deferred ideas). Retros are where the process improves.
+
 ## How to know it's working
 
 | Signal | Means |

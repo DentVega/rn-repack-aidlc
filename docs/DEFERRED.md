@@ -20,3 +20,15 @@
 **Why deferred.** This is a scope decision, not a fix: the plugin is named `rn-repack` and is deliberately frontend-focused, assuming you reuse a backend. Adding backend standards risks diluting that focus.
 
 **Trigger to revisit.** If building (not just consuming) backends becomes common across projects using the plugin. The reuse-vs-build backend question added in **0.8.0** (`aidlc-inception`) is the natural hook — if that answer is frequently "build own," implement this.
+
+---
+
+## Opt-in extensions mechanism (from AWS Labs aidlc-workflows)
+
+**Status:** Deferred (2026-07-01). Noted while reviewing [dynamicdevs/claudecode-aidlc-plugin](https://github.com/dynamicdevs/claudecode-aidlc-plugin), which vendors the AWS Labs rules.
+
+**The idea.** A general mechanism for **modular, opt-in rule sets**: each extension ships a rules file plus an opt-in prompt that Inception asks during requirements ("Should security-baseline rules be enforced? A) Yes — blocking, B) No — PoC"). The answer is recorded in project state; agents check it before enforcing and log skips to the audit trail. AWS ships `security/baseline` and `testing/property-based` as examples.
+
+**Why it fits us.** It is the generalized form of the conditional seeding we already designed for backend standards (above): "seed/enforce a standard only when the user opts in at Inception." If we ever have 2–3 conditional standards (backend, security baseline, strict a11y), implementing them as opt-in extensions beats hardcoding each one.
+
+**Trigger to revisit.** The moment a second conditional standard (after backend) is wanted — build the mechanism then, and migrate backend-standards onto it.

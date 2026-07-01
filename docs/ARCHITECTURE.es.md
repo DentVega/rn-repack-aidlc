@@ -2,7 +2,7 @@
 
 [English](ARCHITECTURE.md) · **Español**
 
-Un análisis a fondo de cómo está construido **rn-repack-aidlc**: los siete agentes, los trece comandos, las nueve skills, y cómo encajan. Para *cómo usar* el plugin, ver [USAGE.es.md](../USAGE.es.md); para una vista rápida, el [README](../README.es.md).
+Un análisis a fondo de cómo está construido **rn-repack-aidlc**: los siete agentes, los catorce comandos, las nueve skills, y cómo encajan. Para *cómo usar* el plugin, ver [USAGE.es.md](../USAGE.es.md); para una vista rápida, el [README](../README.es.md).
 
 ## Modelo mental
 
@@ -63,7 +63,7 @@ Cada agente tiene una **persona** (rol / comunicación / principio) y lee `memor
 - **Qué hace:** corre el toolchain real (`tsc`, `eslint`, código muerto, deps circulares) y agrega un review RN-específico (anti-patrones de perf, estilos hardcodeados, gaps de test/a11y); escribe un `tech-debt.md` priorizado.
 - **Principio:** corre las herramientas reales primero, luego agrega lo que no ven. Solo lectura.
 
-## Los trece comandos
+## Los catorce comandos
 
 Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 
@@ -82,6 +82,7 @@ Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 | `operations [target]` | AI-DLC | Build/servir/verificar/deploy (Dev → Staging → Prod) |
 | `parity [origen]` | Migración | Compara superficie del origen vs cobertura mobile; marca FALTANTES (solo migraciones) |
 | `audit [ruta]` | Calidad | Toolchain (tsc/eslint/código muerto/ciclos) + review RN → reporte de deuda priorizado |
+| `reflect [intent]` | Calidad | Retrospectiva de solo lectura: qué se construyó, fricciones, recomendaciones |
 
 Flujo AI-DLC típico: `aidlc-init` → `setup-skills` → `aidlc-inception` → `bolt-start` (×N) → `operations`.
 

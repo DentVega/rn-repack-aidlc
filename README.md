@@ -60,6 +60,7 @@ specs.md offers three flows. All reuse the same `memory-bank/standards/` and the
 - `/operations [bolt|build|verify|deploy]` — AI-DLC: build with Re.Pack, serve chunks, verify, deploy (Dev → Staging → Prod).
 - `/parity [source]` — migration gap analysis: source-app surface vs mobile coverage, flags MISSING items.
 - `/audit [path]` — tech-debt / code-health audit: toolchain + RN review → prioritized report.
+- `/reflect [intent]` — retrospective of the cycle: what was built, friction points, recommendations. Read-only.
 
 ## Install
 
@@ -110,7 +111,7 @@ The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-
 
 ## Versioning
 
-Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.12.0**. Parked ideas and deferred decisions live in [docs/DEFERRED.md](docs/DEFERRED.md).
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.13.0**. Parked ideas and deferred decisions live in [docs/DEFERRED.md](docs/DEFERRED.md).
 
 ## License
 

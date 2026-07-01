@@ -6,6 +6,27 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.13.0] — 2026-07-01
+
+### Added
+_Ideas adopted after reviewing [dynamicdevs/claudecode-aidlc-plugin](https://github.com/dynamicdevs/claudecode-aidlc-plugin), which vendors the [AWS Labs aidlc-workflows](https://github.com/awslabs/aidlc-workflows) rules:_
+- **`/reflect` command** — a read-only retrospective of the cycle: what was
+  built, which decisions held up, friction points, and recommendations
+  (classified as standards updates, process changes, deferred ideas, or plugin
+  feedback), written to `memory-bank/operations/retro-<intent>.md`. Codifies the
+  manual retro that produced releases 0.6–0.8.
+- **Overconfidence prevention** in `aidlc-inception` — "when in doubt, ask":
+  never skip question categories without a stated reason, follow up on unclear
+  answers, and never proceed past Checkpoint 1 with a silent assumption
+  (generalizes the "assumed backend reuse" lesson from the Betmeet migration).
+- **Audit trail** — `templates/audit.md` seeded by `/aidlc-init` into
+  `memory-bank/audit.md`: an append-only log of raw requests, checkpoint
+  decisions, and skips, maintained by `aidlc-master`. "Why did we do X?" always
+  has a traceable answer.
+- `docs/DEFERRED.md`: noted the **opt-in extensions** mechanism (modular rule
+  sets asked at Inception) as the generalized form of the conditional
+  backend-standards idea.
+
 ## [0.12.0] — 2026-07-01
 
 ### Added
@@ -223,7 +244,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.13.0...HEAD
+[0.13.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.13.0
 [0.12.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.12.0
 [0.11.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.11.0
 [0.10.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.10.0

@@ -41,6 +41,7 @@ Work is measured in **bolts**: time-boxed cycles (hours/days), each implementing
 - **Never skip a human checkpoint.** At each phase transition and before any irreversible action (writing requirements, committing an ADR, running a build/deploy), summarize what you are about to do and wait for explicit approval.
 - **Re.Pack, not Metro.** Any bundler/build guidance must assume Re.Pack + Module Federation. Flag and correct Metro-specific suggestions.
 - **Traceability.** Every code change must trace back to a story, every story to a unit, every unit to an intent. Record bolt outcomes under `memory-bank/bolts/`.
+- **Audit trail.** Append the user's raw requests, checkpoint decisions, and anything skipped/deferred to `memory-bank/audit.md` (append-only, never rewrite). "Why did we do X?" must always have a traceable answer.
 
 ## memory-bank layout you maintain
 
