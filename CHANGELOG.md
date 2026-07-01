@@ -6,6 +6,21 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.11.0] — 2026-07-01
+
+### Added
+- **Design standards** (`templates/standards/design-standards.md`) — a design-
+  system standard seeded by `/aidlc-init`: design tokens (semantic color,
+  spacing, typography scales), light/dark theming from day one, themed
+  primitives instead of raw RN components, a11y baseline (44pt targets,
+  contrast, dynamic type), and motion. The Construction Design stage now applies
+  it. Closes the last real gap from the Betmeet build, whose theming was done as
+  a late ad-hoc "design-parity" bolt.
+- **Template smoke tests in the doctor** (`scripts/check-plugin.mjs`) — every
+  shipped `.mjs` template/script must parse (`node --check`) and every `.json`
+  must be valid, so a broken Re.Pack config template can't ship. Verified with a
+  negative test.
+
 ## [0.10.0] — 2026-07-01
 
 ### Added
@@ -195,7 +210,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.11.0
 [0.10.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.10.0
 [0.9.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.9.0
 [0.8.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.8.0

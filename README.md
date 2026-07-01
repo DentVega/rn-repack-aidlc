@@ -100,7 +100,7 @@ skills/           i18n-doc-sync (bundled)
 scripts/          check-i18n-docs.mjs, pre-commit (i18n hard guard)
 .github/workflows/  i18n-docs.yml (CI enforcement)
 templates/          activeContext, progress, CLAUDE.md, activation-checklist, repack/
-templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards
+templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards, design-standards
 templates/simple/     requirements, design, tasks
 ```
 
@@ -108,7 +108,7 @@ The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-
 
 ## Versioning
 
-Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.10.0**. Parked ideas and deferred decisions live in [docs/DEFERRED.md](docs/DEFERRED.md).
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **0.11.0**. Parked ideas and deferred decisions live in [docs/DEFERRED.md](docs/DEFERRED.md).
 
 ## License
 

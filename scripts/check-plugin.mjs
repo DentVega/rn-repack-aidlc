@@ -11,6 +11,7 @@
 
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { execSync } from 'node:child_process';
 
 const ROOT = process.cwd();
 const problems = [];
@@ -80,9 +81,29 @@ if (existsSync(skillsDir)) {
   }
 }
 
+// --- template smoke tests: shipped .mjs must parse, .json must be valid ---
+function walkFiles(dir, out = []) {
+  if (!existsSync(dir)) return out;
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) walkFiles(full, out);
+    else out.push(full);
+  }
+  return out;
+}
+for (const file of [...walkFiles(join(ROOT, 'templates')), ...walkFiles(join(ROOT, 'scripts'))]) {
+  if (file.endsWith('.mjs')) {
+    try { execSync(`node --check "${file}"`, { stdio: 'pipe' }); }
+    catch (e) { fail(`${file.replace(ROOT + '/', '')} has a syntax error: ${String(e.stderr || e).split('\n').find((l) => l.includes('Error')) || 'parse failed'}`); }
+  } else if (file.endsWith('.json')) {
+    try { JSON.parse(readFileSync(file, 'utf8')); }
+    catch (e) { fail(`${file.replace(ROOT + '/', '')} is not valid JSON: ${e.message}`); }
+  }
+}
+
 if (problems.length) {
   console.error('check-plugin: problems found —');
   for (const p of problems) console.error(`  ✗ ${p}`);
   process.exit(1);
 }
-console.log('check-plugin: manifest, agents, commands, and skills are all valid and registered. ✓');
+console.log('check-plugin: manifest, agents, commands, skills, and templates are all valid. ✓');

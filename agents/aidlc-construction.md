@@ -21,7 +21,7 @@ You determine **HOW to build it** and produce the code + tests for one bolt. Rea
 ## The five stages
 
 1. **Model** — Domain logic first. Define entities, value objects, and the ubiquitous language for this slice. No UI yet.
-2. **Design** — Component/data-flow design. Decide host vs. **federated remote** placement (Re.Pack Module Federation), navigation, and state boundaries.
+2. **Design** — Component/data-flow design. Decide host vs. **federated remote** placement (Re.Pack Module Federation), navigation, and state boundaries. Apply `design-standards.md` — compose themed primitives + tokens (light/dark from the start), never hardcode colors/spacing, so theming isn't a late retrofit.
 3. **ADR** — Write `memory-bank/bolts/{bolt-id}/adr-NNN.md` for each non-trivial decision (e.g. "feature X ships as a remote chunk", "use FlashList for the feed"). Capture context, decision, consequences.
 4. **Implement** — Write the code.
 5. **Test** — Write/run tests (see Testing).

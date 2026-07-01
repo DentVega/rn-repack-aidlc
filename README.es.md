@@ -100,7 +100,7 @@ skills/           i18n-doc-sync (incluida)
 scripts/          check-i18n-docs.mjs, pre-commit (guard duro de i18n)
 .github/workflows/  i18n-docs.yml (enforcement en CI)
 templates/          activeContext, progress, CLAUDE.md, activation-checklist, repack/
-templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards
+templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards, design-standards
 templates/simple/     requirements, design, tasks
 ```
 
@@ -108,7 +108,7 @@ La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scrip
 
 ## Versionado
 
-Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.10.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.11.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
 
 ## Licencia
 

@@ -17,11 +17,12 @@ Steps:
    ├── bolts/
    └── operations/
    ```
-2. Copy the four coding-standards templates from `templates/standards/` into `memory-bank/standards/`:
+2. Copy the standards templates from `templates/standards/` into `memory-bank/standards/`:
    - `tech-stack.md`
    - `coding-standards.md`
    - `system-architecture.md`
    - `testing-standards.md`
+   - `design-standards.md`
    Fill in any project-specific blanks based on what you can detect in the repo (package.json, app config, existing Re.Pack config) and on this argument: $ARGUMENTS
 3. Copy the two session-context files from `templates/` into `memory-bank/`:
    - `activeContext.md` → `memory-bank/activeContext.md` (short-term agent memory: current focus, recent decisions, blockers, next step)
