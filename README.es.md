@@ -48,6 +48,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 - `/aidlc-init` — crea `memory-bank/`, siembra los standards + Memory Bank (`activeContext.md`, `progress.md`) y genera un `CLAUDE.md` del proyecto.
 - `/setup-skills` — instala las ocho skills referenciadas.
 - `/repack-init` — scaffoldea una config real de Re.Pack + Module Federation (host + remote).
+- `/status` — dashboard de solo lectura: intent activo, fase, progreso de bolts, siguiente paso (desde el Memory Bank).
 - `/spec-flow [tarea]` — elige y arranca el flow adecuado (Simple / FIRE / AI-DLC).
 - `/simple-spec [cambio]` — flow Simple: genera requirements/design/tasks.
 - `/fire [feature]` — flow FIRE: ejecución rápida y adaptativa sobre una app existente.
@@ -76,7 +77,7 @@ Este repo es un **marketplace de plugins** de Claude Code. Agrégalo y luego ins
 /bolt-start <primer bolt del plan>
 ```
 
-Guía paso a paso completa (tracks Expo y bare-RN): **[USAGE.es.md](USAGE.es.md)**. Análisis a fondo de cada agente, comando y skill: **[docs/ARCHITECTURE.es.md](docs/ARCHITECTURE.es.md)**.
+Guía paso a paso completa (tracks Expo y bare-RN): **[USAGE.es.md](USAGE.es.md)**. Análisis a fondo de cada agente, comando y skill: **[docs/ARCHITECTURE.es.md](docs/ARCHITECTURE.es.md)**. Enviar updates de JS sin release de store: **[docs/OTA.es.md](docs/OTA.es.md)**.
 
 ## Notas de diseño — por qué las skills no chocan
 
@@ -105,7 +106,7 @@ La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scrip
 
 ## Versionado
 
-Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.8.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.9.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
 
 ## Licencia
 

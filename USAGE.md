@@ -58,6 +58,8 @@ Then `/bolt-start <first bolt>` and `/operations build`.
 
 > **Mid-Construction change** — if a new requirement or inconsistency surfaces while a bolt is in progress, pause and run `/change <description> [source of truth]`. It classifies the change (omitted requirement, new requirement, architectural change…), updates only the affected artifacts, and tells you which bolts to regenerate — without writing any code. Resume Construction once you approve the updated plan.
 
+> **Check progress anytime** — run `/status` for a read-only dashboard of the active intent, current phase, bolts done vs total, blockers, and the suggested next command (read from the Memory Bank).
+
 ## How to know it's working
 
 | Signal | Means |

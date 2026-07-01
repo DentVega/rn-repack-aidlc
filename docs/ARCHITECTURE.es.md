@@ -53,7 +53,7 @@ Cada agente tiene una **persona** (rol / comunicación / principio) y lee `memor
 - **Rol:** ejecución rápida, adaptativa y **brownfield-first** que sigue las convenciones existentes.
 - **Ceremonia adaptativa:** 0–2 checkpoints según complejidad; nunca excede 2 (recomienda AI-DLC si hace falta más).
 
-## Los diez comandos
+## Los once comandos
 
 Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 
@@ -62,6 +62,7 @@ Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 | `aidlc-init [desc]` | Setup | Crea `memory-bank/` (standards + Memory Bank) y un `CLAUDE.md` del proyecto |
 | `setup-skills` | Setup | Instala las 8 skills referenciadas (`npx skills add`, user-level) |
 | `repack-init [host] [remote] [puerto]` | Setup | Scaffoldea config real Re.Pack + Module Federation (solo bare RN) |
+| `status` | Selector | Dashboard de solo lectura: intent, fase, progreso de bolts, siguiente paso |
 | `spec-flow [tarea]` | Selector | Recomienda y arranca el flow correcto según el tamaño |
 | `simple-spec [cambio]` | Flow Simple | Genera requirements/design/tasks (solo specs) |
 | `fire [feature]` | Flow FIRE | Ejecución adaptativa brownfield vía `fire-executor` |

@@ -4,8 +4,12 @@
 #   ln -sf ../../scripts/pre-commit .git/hooks/pre-commit
 # (or copy it). Requires Node.
 
-# Run when Markdown or any command file is staged.
-if git diff --cached --name-only | grep -qE '\.md$|^commands/'; then
+# Run when Markdown, commands, agents, skills, manifest, or scripts are staged.
+if git diff --cached --name-only | grep -qE '\.md$|^commands/|^agents/|^skills/|^\.claude-plugin/|^scripts/'; then
+  node scripts/check-plugin.mjs || {
+    echo "commit blocked: plugin integrity check failed (unregistered/invalid agent, command, or skill)." >&2
+    exit 1
+  }
   node scripts/check-i18n-docs.mjs || {
     echo "commit blocked: localized Markdown variants are out of sync." >&2
     exit 1

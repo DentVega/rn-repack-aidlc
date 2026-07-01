@@ -6,6 +6,30 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.9.0] — 2026-06-26
+
+### Added
+- **`/status` command** — a read-only dashboard that reports the active intent,
+  current phase, bolts done vs total, blockers, and the suggested next command,
+  read from the Memory Bank (`progress.md` / `activeContext.md`).
+- **Plugin doctor** (`scripts/check-plugin.mjs`) — validates the plugin's own
+  integrity: manifest parses with required fields, every agent/command file is
+  registered in `plugin.json` (and vice versa), and agents/commands/skills have
+  the required frontmatter. Catches the whole "won't load" bug class. Runs in CI
+  and pre-commit alongside the other guards.
+- **`CONTRIBUTING.md`** — how to run the guards, add a command (with the manifest
+  step that bit us twice), keep docs bilingual, and version releases.
+- **`docs/OTA.md` / `docs/OTA.es.md`** — guidance on shipping JS/Hermes updates
+  without a store release via Re.Pack Module Federation (what's OTA-able, how it
+  works, skew/fallback/rollout/rollback, store-policy note). Wired a note into
+  the `aidlc-operations` agent.
+
+### Changed
+- The CI workflow and pre-commit hook now run three guards (plugin doctor + i18n
+  sync + command coverage) and trigger on `agents/**`, `skills/**`,
+  `.claude-plugin/**`, and `scripts/**` too.
+- `docs/ARCHITECTURE.md` / `.es.md` updated to eleven commands (added `/status`).
+
 ### Documentation
 - Add `docs/DEFERRED.md` — a maintainer backlog of intentionally-deferred ideas
   with their reasoning. First entry: backend standards (keep the plugin
@@ -157,7 +181,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.9.0
 [0.8.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.8.0
 [0.7.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.7.0
 [0.6.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.6.0

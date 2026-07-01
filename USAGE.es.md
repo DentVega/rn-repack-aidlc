@@ -58,6 +58,8 @@ Luego `/bolt-start <primer bolt>` y `/operations build`.
 
 > **Cambio a mitad de Construction** — si aparece un requirement nuevo o una inconsistencia mientras un bolt está en curso, pausa y corre `/change <descripción> [fuente de verdad]`. Clasifica el cambio (requirement omitido, nuevo requirement, cambio arquitectónico…), actualiza solo los artefactos afectados e indica qué bolts hay que regenerar — sin escribir código. Retoma la Construction una vez que apruebes el plan actualizado.
 
+> **Revisa el progreso cuando quieras** — corre `/status` para un dashboard de solo lectura: intent activo, fase actual, bolts hechos vs total, bloqueos, y el siguiente comando sugerido (leído del Memory Bank).
+
 ## Cómo saber que va bien
 
 | Señal | Significa |

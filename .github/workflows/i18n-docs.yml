@@ -1,14 +1,15 @@
-name: docs guards
+name: plugin guards
 
-# Two guards that keep docs honest:
-#  1. i18n-doc-sync  — localized Markdown variants stay structurally in sync.
-#  2. command coverage — every command in commands/ is documented in the guides.
+# Three guards that keep the plugin honest:
+#  1. plugin doctor    — manifest/agents/commands/skills valid + registered.
+#  2. i18n-doc-sync    — localized Markdown variants stay structurally in sync.
+#  3. command coverage — every command is documented in the guides.
 
 on:
   push:
-    paths: ['**/*.md', 'commands/**']
+    paths: ['**/*.md', 'commands/**', 'agents/**', 'skills/**', '.claude-plugin/**', 'scripts/**']
   pull_request:
-    paths: ['**/*.md', 'commands/**']
+    paths: ['**/*.md', 'commands/**', 'agents/**', 'skills/**', '.claude-plugin/**', 'scripts/**']
 
 jobs:
   check:
@@ -18,6 +19,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+      - name: Plugin integrity (doctor)
+        run: node scripts/check-plugin.mjs
       - name: Localized docs are in sync
         run: node scripts/check-i18n-docs.mjs
       - name: Every command is documented
