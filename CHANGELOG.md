@@ -6,6 +6,17 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.8.0] — 2026-06-26
+
+### Added
+- **Backend question in Inception** — `aidlc-inception` now asks, at Checkpoint 1
+  (especially for migrations): reuse an existing backend, build your own, or
+  hybrid? Do you control it? Are the writes callable from a native client
+  (server actions/RSC are not)? The answer plans backend bolts up front instead
+  of letting a "reuse backend, no changes" assumption slip into requirements and
+  get disproven mid-Construction. Retro learning from the Betmeet migration,
+  where the Write-Path Audit spike caught this late.
+
 ## [0.7.0] — 2026-06-26
 
 ### Added
@@ -140,7 +151,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.8.0
 [0.7.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.7.0
 [0.6.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.6.0
 [0.5.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.5.0
