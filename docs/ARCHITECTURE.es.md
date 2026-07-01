@@ -53,7 +53,7 @@ Cada agente tiene una **persona** (rol / comunicación / principio) y lee `memor
 - **Rol:** ejecución rápida, adaptativa y **brownfield-first** que sigue las convenciones existentes.
 - **Ceremonia adaptativa:** 0–2 checkpoints según complejidad; nunca excede 2 (recomienda AI-DLC si hace falta más).
 
-## Los nueve comandos
+## Los diez comandos
 
 Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 
@@ -67,6 +67,7 @@ Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 | `fire [feature]` | Flow FIRE | Ejecución adaptativa brownfield vía `fire-executor` |
 | `aidlc-inception [objetivo]` | AI-DLC | Corre la fase de Inception |
 | `bolt-start [bolt]` | AI-DLC | Ejecuta un bolt por las cinco etapas DDD |
+| `change [desc] [fuente?]` | AI-DLC | Evoluciona los artefactos a mitad de Construction (requirement nuevo/omitido, cambio arq.); resumen de impacto clasificado, espera aprobación |
 | `operations [target]` | AI-DLC | Build/servir/verificar/deploy (Dev → Staging → Prod) |
 
 Flujo AI-DLC típico: `aidlc-init` → `setup-skills` → `aidlc-inception` → `bolt-start` (×N) → `operations`.

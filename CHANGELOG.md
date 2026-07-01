@@ -6,6 +6,27 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.0] — 2026-06-26
+
+### Fixed
+- **`/change` command didn't load** — it existed in `commands/change.md` and was
+  documented, but was missing from the `plugin.json` `commands` array (the same
+  "won't load" bug class as 0.3.1). Registered it; `/rn-repack-aidlc:change` now
+  works. Surfaced by real-world use (the Betmeet migration).
+
+### Changed
+- **`scripts/check-docs-commands.mjs` now also verifies the manifest** — every
+  `commands/*.md` must be registered in `plugin.json` (and vice versa), not just
+  documented. This guard would have caught the `/change` bug; it now runs in CI
+  and pre-commit.
+- `docs/ARCHITECTURE.md` / `.es.md` updated to ten commands (added `/change`).
+
+### Added
+- **`/change`** is now a first-class, loadable command — evolves the AI-DLC
+  artifacts mid-Construction when a new/omitted requirement, architectural
+  change, or spec inconsistency surfaces; produces a classified impact summary
+  and waits for approval before resuming. (Emerged from the Betmeet build.)
+
 ## [0.5.0] — 2026-06-26
 
 ### Added
@@ -104,7 +125,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.6.0
 [0.5.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.5.0
 [0.4.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.4.0
 [0.3.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.3.1
