@@ -62,6 +62,8 @@ Then `/bolt-start <first bolt>` and `/operations build`.
 
 > **Migrations only** — if you're porting an existing app, run `/parity <path to the source surface>` (e.g. the web app's `aidlc-docs`, routes, or API doc) to compare source coverage against your mobile project and flag anything MISSING. Run it after Inception and before declaring a version "parity-complete".
 
+> **Worried about tech debt?** Run `/audit [path]` — it runs your toolchain (tsc, eslint, dead-code, circular deps) plus an RN-specific review (perf, hardcoded styles, missing tests, a11y) and writes a prioritized `tech-debt.md`. On-demand, not real-time editor inspection.
+
 ## How to know it's working
 
 | Signal | Means |

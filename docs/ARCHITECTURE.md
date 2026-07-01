@@ -2,7 +2,7 @@
 
 **English** · [Español](ARCHITECTURE.es.md)
 
-A deep dive into how **rn-repack-aidlc** is built: the six agents, the twelve commands, the nine skills, and how they fit together. For *how to use* the plugin, see [USAGE.md](../USAGE.md); for a quick overview, the [README](../README.md).
+A deep dive into how **rn-repack-aidlc** is built: the seven agents, the thirteen commands, the nine skills, and how they fit together. For *how to use* the plugin, see [USAGE.md](../USAGE.md); for a quick overview, the [README](../README.md).
 
 ## Mental model
 
@@ -25,7 +25,7 @@ Construction (HOW)     → per bolt: Model → Design → ADR → Implement → 
 Operations             → build (Re.Pack) → Dev → Staging → Prod → monitor
 ```
 
-## The six agents
+## The seven agents
 
 Each agent has a **persona** (role / communication / principle) and reads `memory-bank/activeContext.md` + `progress.md` on start. They are refined from the canonical specs.md prompts.
 
@@ -58,7 +58,12 @@ Each agent has a **persona** (role / communication / principle) and reads `memor
 - **What it does:** compares a source app's surface (screens/units/endpoints) against the mobile project's coverage; writes a coverage matrix and flags anything **MISSING**.
 - **Principle:** prefer flagging MISSING over assuming coverage.
 
-## The twelve commands
+### 7. `code-auditor` — tech-debt audit
+- **Role:** code-health auditor.
+- **What it does:** runs the real toolchain (`tsc`, `eslint`, dead-code, circular deps) then adds an RN-specific review (perf anti-patterns, hardcoded styles, testing/a11y gaps); writes a prioritized `tech-debt.md`.
+- **Principle:** run the real tools first, then add what tools can't see. Read-only.
+
+## The thirteen commands
 
 Invoked with the plugin namespace: `/rn-repack-aidlc:<command>`.
 
@@ -76,6 +81,7 @@ Invoked with the plugin namespace: `/rn-repack-aidlc:<command>`.
 | `change [desc] [source?]` | AI-DLC | Evolves the artifacts mid-Construction (new/omitted requirement, arch change); classified impact summary, waits for approval |
 | `operations [target]` | AI-DLC | Build/serve/verify/deploy (Dev → Staging → Prod) |
 | `parity [source]` | Migration | Compares source-app surface vs mobile coverage; flags MISSING (migrations only) |
+| `audit [path]` | Quality | Toolchain (tsc/eslint/dead-code/cycles) + RN review → prioritized tech-debt report |
 
 Typical AI-DLC flow: `aidlc-init` → `setup-skills` → `aidlc-inception` → `bolt-start` (×N) → `operations`.
 

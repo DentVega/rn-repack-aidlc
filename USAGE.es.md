@@ -62,6 +62,8 @@ Luego `/bolt-start <primer bolt>` y `/operations build`.
 
 > **Solo migraciones** — si estás portando una app existente, corre `/parity <ruta a la superficie del origen>` (p. ej. los `aidlc-docs` del web, rutas, o un API doc) para comparar la cobertura del origen contra tu proyecto mobile y marcar lo que FALTA. Córrelo después de Inception y antes de declarar una versión "paridad completa".
 
+> **¿Te preocupa la deuda técnica?** Corre `/audit [ruta]` — corre tu toolchain (tsc, eslint, código muerto, deps circulares) más un review RN-específico (perf, estilos hardcodeados, tests faltantes, a11y) y escribe un `tech-debt.md` priorizado. On-demand, no inspección en tiempo real del editor.
+
 ## Cómo saber que va bien
 
 | Señal | Significa |

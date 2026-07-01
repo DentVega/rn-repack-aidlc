@@ -6,6 +6,19 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.12.0] — 2026-07-01
+
+### Added
+- **Tech-debt / code-health audit** — a `code-auditor` agent + `/audit [path]`
+  command. Runs the real toolchain (`tsc --noEmit`, `eslint`, and — if present —
+  `knip`/`ts-prune` for dead code and `madge` for circular deps), then adds an
+  RN-specific review the linters can't do (unmemoized lists, inline render
+  objects, hardcoded styles vs `design-standards.md`, testing/a11y gaps,
+  oversized components, stray `console.log`, Metro config that slipped in). Writes
+  a prioritized `memory-bank/operations/tech-debt.md` (🔴/🟡/🟢, tool-found vs
+  review-found separated). Read-only; on-demand, not real-time editor inspection.
+  Now 7 agents / 13 commands; ARCHITECTURE updated.
+
 ## [0.11.0] — 2026-07-01
 
 ### Added
@@ -210,7 +223,8 @@ adheres to [Semantic Versioning](https://semver.org/).
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.12.0
 [0.11.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.11.0
 [0.10.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.10.0
 [0.9.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.9.0

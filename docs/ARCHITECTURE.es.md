@@ -2,7 +2,7 @@
 
 [English](ARCHITECTURE.md) · **Español**
 
-Un análisis a fondo de cómo está construido **rn-repack-aidlc**: los seis agentes, los doce comandos, las nueve skills, y cómo encajan. Para *cómo usar* el plugin, ver [USAGE.es.md](../USAGE.es.md); para una vista rápida, el [README](../README.es.md).
+Un análisis a fondo de cómo está construido **rn-repack-aidlc**: los siete agentes, los trece comandos, las nueve skills, y cómo encajan. Para *cómo usar* el plugin, ver [USAGE.es.md](../USAGE.es.md); para una vista rápida, el [README](../README.es.md).
 
 ## Modelo mental
 
@@ -25,7 +25,7 @@ Construction (CÓMO)      → por bolt: Model → Design → ADR → Implement �
 Operations               → build (Re.Pack) → Dev → Staging → Prod → monitoreo
 ```
 
-## Los seis agentes
+## Los siete agentes
 
 Cada agente tiene una **persona** (rol / comunicación / principio) y lee `memory-bank/activeContext.md` + `progress.md` al iniciar. Están afinados desde los prompts canónicos de specs.md.
 
@@ -58,7 +58,12 @@ Cada agente tiene una **persona** (rol / comunicación / principio) y lee `memor
 - **Qué hace:** compara la superficie de un app origen (pantallas/units/endpoints) contra la cobertura del proyecto mobile; escribe una matriz de cobertura y marca lo que **FALTA**.
 - **Principio:** prefiere marcar FALTANTE antes que asumir cobertura.
 
-## Los doce comandos
+### 7. `code-auditor` — auditoría de deuda técnica
+- **Rol:** auditor de salud del código.
+- **Qué hace:** corre el toolchain real (`tsc`, `eslint`, código muerto, deps circulares) y agrega un review RN-específico (anti-patrones de perf, estilos hardcodeados, gaps de test/a11y); escribe un `tech-debt.md` priorizado.
+- **Principio:** corre las herramientas reales primero, luego agrega lo que no ven. Solo lectura.
+
+## Los trece comandos
 
 Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 
@@ -76,6 +81,7 @@ Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 | `change [desc] [fuente?]` | AI-DLC | Evoluciona los artefactos a mitad de Construction (requirement nuevo/omitido, cambio arq.); resumen de impacto clasificado, espera aprobación |
 | `operations [target]` | AI-DLC | Build/servir/verificar/deploy (Dev → Staging → Prod) |
 | `parity [origen]` | Migración | Compara superficie del origen vs cobertura mobile; marca FALTANTES (solo migraciones) |
+| `audit [ruta]` | Calidad | Toolchain (tsc/eslint/código muerto/ciclos) + review RN → reporte de deuda priorizado |
 
 Flujo AI-DLC típico: `aidlc-init` → `setup-skills` → `aidlc-inception` → `bolt-start` (×N) → `operations`.
 
