@@ -6,6 +6,27 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.0] — 2026-07-02
+
+**First stable release.** The plugin has completed a full cycle: built from
+scratch, validated on a real-world migration (Betmeet: 24 bolts, own Supabase
+backend, design parity), hardened by that use (manifest fixes, guards, retro
+learnings), extended with capabilities that emerged from practice (`/change`,
+activation checklist, `/parity`, `/audit`, `/reflect`, audit trail), and
+protected by three CI/pre-commit guards.
+
+### Stability commitment
+- Command names/arguments, agent names, and the `memory-bank/` layout are
+  **frozen** — breaking changes only in a major version. Additive features land
+  in minors; fixes in patches.
+- Surface at 1.0: **7 agents · 14 commands · 9 skills (8 referenced + 1
+  bundled) · 5 standards templates · 3 guards.**
+
+### Changed
+- README (EN/ES) Layout block refreshed to the full current surface (all 7
+  agents, 14 commands, 3 guard scripts, current templates); removed a stale
+  duplicated `commands/` line.
+
 ## [0.13.0] — 2026-07-01
 
 ### Added
@@ -244,7 +265,8 @@ _Ideas adopted after reviewing [dynamicdevs/claudecode-aidlc-plugin](https://git
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v0.13.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.0.0
 [0.13.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.13.0
 [0.12.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.12.0
 [0.11.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.11.0

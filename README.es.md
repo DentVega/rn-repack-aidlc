@@ -95,14 +95,16 @@ Guía paso a paso completa (tracks Expo y bare-RN): **[USAGE.es.md](USAGE.es.md)
 
 ```
 .claude-plugin/   plugin.json, marketplace.json
-agents/           aidlc-{master,inception,construction,operations}, fire-executor
-commands/         aidlc-init, setup-skills, spec-flow, simple-spec, fire,
-                  aidlc-inception, bolt-start
-commands/         …, operations
+agents/           aidlc-{master,inception,construction,operations}, fire-executor,
+                  parity-analyst, code-auditor
+commands/         aidlc-init, setup-skills, repack-init, spec-flow, status,
+                  simple-spec, fire, aidlc-inception, bolt-start, change,
+                  operations, parity, audit, reflect
 skills/           i18n-doc-sync (incluida)
-scripts/          check-i18n-docs.mjs, pre-commit (guard duro de i18n)
-.github/workflows/  i18n-docs.yml (enforcement en CI)
-templates/          activeContext, progress, CLAUDE.md, activation-checklist, repack/
+scripts/          check-plugin.mjs (doctor), check-i18n-docs.mjs,
+                  check-docs-commands.mjs, pre-commit
+.github/workflows/  plugin guards (enforcement en CI)
+templates/          activeContext, progress, audit, CLAUDE.md, activation-checklist, repack/
 templates/standards/  tech-stack, coding-standards, system-architecture, testing-standards, design-standards
 templates/simple/     requirements, design, tasks
 ```
@@ -111,7 +113,9 @@ La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scrip
 
 ## Versionado
 
-Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **0.13.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **1.0.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
+
+**Compromiso de estabilidad (1.0):** la superficie está congelada — los nombres/argumentos de comandos, los nombres de agentes y el layout de `memory-bank/` solo cambian en una versión mayor. Las features aditivas van en minors; los fixes en patches.
 
 ## Licencia
 
