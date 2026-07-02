@@ -3,12 +3,12 @@ description: "Scaffold a real Re.Pack + Module Federation v2 setup (host + one r
 argument-hint: "[host name] [remote name] [remote port, default 8082]"
 ---
 
-Scaffold a working **Re.Pack + Module Federation v2** setup into this project using this plugin's `templates/repack/` files. Parse names/port from: $ARGUMENTS (defaults: host `HostApp`, remote `MiniApp`, port `8082`).
+Scaffold a working **Re.Pack + Module Federation v2** setup into this project using the plugin's `${CLAUDE_PLUGIN_ROOT}/templates/repack/` files. Parse names/port from: $ARGUMENTS (defaults: host `HostApp`, remote `MiniApp`, port `8082`).
 
 Steps:
 
 1. **Confirm the stack.** Verify this is a bare React Native project (not Expo-managed — Expo uses Metro and is incompatible with this Re.Pack setup). If Metro config is present, flag it: Re.Pack replaces Metro.
-2. **Copy templates** from `templates/repack/`:
+2. **Copy templates** from `${CLAUDE_PLUGIN_ROOT}/templates/repack/`:
    - `rspack.config.host.mjs` → `rspack.config.mjs` (host)
    - `rspack.config.remote.mjs` → the remote's config
    - `ScriptManager.setup.js` → host source, imported at the top of the host `index.js`

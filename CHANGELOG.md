@@ -6,6 +6,17 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.3.1] — 2026-07-02
+
+### Fixed
+- **Plugin-internal paths reported "missing" in the field** — a real `/federate`
+  run flagged `docs/OTA.md` as nonexistent and suggested creating it in the
+  user's project. Agents/commands run in the project, so bare plugin paths
+  (`docs/OTA.md`, `templates/…`) got looked up there. All 11 internal references
+  are now qualified: commands use `${CLAUDE_PLUGIN_ROOT}/…`; agents say "the
+  plugin's `<path>` (not a project file)" with the GitHub URL for docs. Added a
+  CONTRIBUTING rule so the pattern isn't reintroduced.
+
 ## [1.3.0] — 2026-07-02
 
 ### Added
@@ -323,7 +334,8 @@ _Ideas adopted after reviewing [dynamicdevs/claudecode-aidlc-plugin](https://git
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.3.1...HEAD
+[1.3.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.3.1
 [1.3.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.3.0
 [1.2.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.2.0
 [1.1.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.1.0

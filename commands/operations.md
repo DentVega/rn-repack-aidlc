@@ -14,4 +14,4 @@ Run only after a bolt's code is implemented and its tests pass (`/bolt-start` �
 
 Honor the Re.Pack release checklist (compatible `@module-federation` shared-deps versions, no React/RN duplication across chunks, source maps + symbolication). Record release context and rollback notes under `memory-bank/operations/`. If CI/CD is involved, the `github-actions` skill covers the pipeline.
 
-Also generate/update `memory-bank/operations/activation-checklist.md` from `templates/activation-checklist.md` — the manual steps only the user can run to go from code-complete to a running app (migrations, function deploys, native rebuild, dashboard config, seed). Surface the unchecked items rather than claiming the app is live.
+Also generate/update `memory-bank/operations/activation-checklist.md` from the plugin's `${CLAUDE_PLUGIN_ROOT}/templates/activation-checklist.md` — the manual steps only the user can run to go from code-complete to a running app (migrations, function deploys, native rebuild, dashboard config, seed). Surface the unchecked items rather than claiming the app is live.

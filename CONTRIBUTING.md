@@ -36,6 +36,15 @@ A command needs **three** things, or it silently won't load (this bit us twice):
 1. Create `agents/<name>.md` with frontmatter `name:` + `description:`.
 2. Register it in `plugin.json` under `"agents"`.
 
+## Referencing plugin files from agents/commands
+Agents and commands run **in the user's project**, so a bare path like
+`docs/OTA.md` or `templates/repack/` gets looked up in the project — and
+reported "missing" (this happened in the field). Always qualify:
+- **Commands:** use `${CLAUDE_PLUGIN_ROOT}/…` (Claude Code resolves it to the
+  plugin install directory).
+- **Agents:** say "the plugin's `<path>` (a plugin file, not a project file)"
+  and, for docs, add the GitHub URL.
+
 ## Editing docs — keep languages in sync
 Every user-facing doc has a base (`<name>.md`) and a Spanish variant
 (`<name>.es.md`). **Any edit to one must be mirrored in the other** — same

@@ -115,7 +115,7 @@ La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scrip
 
 ## Versionado
 
-Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **1.3.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **1.3.1**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
 
 **Compromiso de estabilidad (1.0):** la superficie está congelada — los nombres/argumentos de comandos, los nombres de agentes y el layout de `memory-bank/` solo cambian en una versión mayor. Las features aditivas van en minors; los fixes en patches.
 

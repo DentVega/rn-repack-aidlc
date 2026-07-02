@@ -9,7 +9,7 @@ The agent must:
 
 1. **Map the seams** — feature folders/modules, their screens and navigation entry points, imports in/out, and native-dependency usage.
 2. **Score each seam** against the federation criteria: native deps (hard gate), coupling, startup-criticality, weight, update cadence, ownership. Every verdict cites evidence.
-3. **Classify** each as 🟢 strong candidate / 🟡 possible / 🔴 keep in host, and — if there's a 🟢 — recommend the **first carve** with the concrete next step (`/repack-init`, or merging `ModuleFederationPluginV2` into an existing config; `docs/OTA.md` for what it unlocks).
+3. **Classify** each as 🟢 strong candidate / 🟡 possible / 🔴 keep in host, and — if there's a 🟢 — recommend the **first carve** with the concrete next step (`/repack-init`, or merging `ModuleFederationPluginV2` into an existing config; the plugin's `${CLAUDE_PLUGIN_ROOT}/docs/OTA.md` explains what it unlocks — it is a plugin file, NOT a project file; don't report it missing or create it in the project).
 4. **Write the report** to `memory-bank/operations/federation-candidates.md`, including shared-singleton notes and a revisit trigger.
 
 **"Stay single-bundle" is a valid recommendation** — federation must earn its complexity (chunk hosting, version skew, fallbacks). If nothing clears the bar, the agent says so plainly and notes what would change the answer.

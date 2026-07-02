@@ -17,18 +17,18 @@ Steps:
    ├── bolts/
    └── operations/
    ```
-2. Copy the standards templates from `templates/standards/` into `memory-bank/standards/`:
+2. Copy the standards templates from the plugin's `${CLAUDE_PLUGIN_ROOT}/templates/standards/` into the project's `memory-bank/standards/`:
    - `tech-stack.md`
    - `coding-standards.md`
    - `system-architecture.md`
    - `testing-standards.md`
    - `design-standards.md`
    Fill in any project-specific blanks based on what you can detect in the repo (package.json, app config, existing Re.Pack config) and on this argument: $ARGUMENTS
-3. Copy the session-context files from `templates/` into `memory-bank/`:
+3. Copy the session-context files from the plugin's `${CLAUDE_PLUGIN_ROOT}/templates/` into `memory-bank/`:
    - `activeContext.md` → `memory-bank/activeContext.md` (short-term agent memory: current focus, recent decisions, blockers, next step)
    - `progress.md` → `memory-bank/progress.md` (long-term tracker: milestones, bolt statuses, deferred tasks)
    - `audit.md` → `memory-bank/audit.md` (append-only trail of raw requests, decisions, and skips) — log this very init as its first entry
-4. Generate a project `CLAUDE.md` from this plugin's `templates/CLAUDE.md.template`: copy it to the repo root (if none exists), fill the `[PROJECT]` blanks from what you detect, and keep it pointing at `memory-bank/standards/`. This is the file Claude loads every session — it makes the standards persistent.
+4. Generate a project `CLAUDE.md` from the plugin's `${CLAUDE_PLUGIN_ROOT}/templates/CLAUDE.md.template`: copy it to the repo root (if none exists), fill the `[PROJECT]` blanks from what you detect, and keep it pointing at `memory-bank/standards/`. This is the file Claude loads every session — it makes the standards persistent.
 5. Remind the user to install the referenced skills with `/setup-skills` if they haven't, and that `/repack-init` can scaffold the actual Re.Pack + Module Federation config.
 6. Tell the user the next step is `/aidlc-inception` to capture the first intent.
 
