@@ -2,7 +2,7 @@
 
 **English** · [Español](ARCHITECTURE.es.md)
 
-A deep dive into how **rn-repack-aidlc** is built: the seven agents, the fourteen commands, the nine skills, and how they fit together. For *how to use* the plugin, see [USAGE.md](../USAGE.md); for a quick overview, the [README](../README.md).
+A deep dive into how **rn-repack-aidlc** is built: the eight agents, the fifteen commands, the nine skills, and how they fit together. For *how to use* the plugin, see [USAGE.md](../USAGE.md); for a quick overview, the [README](../README.md).
 
 ## Mental model
 
@@ -25,7 +25,7 @@ Construction (HOW)     → per bolt: Model → Design → ADR → Implement → 
 Operations             → build (Re.Pack) → Dev → Staging → Prod → monitor
 ```
 
-## The seven agents
+## The eight agents
 
 Each agent has a **persona** (role / communication / principle) and reads `memory-bank/activeContext.md` + `progress.md` on start. They are refined from the canonical specs.md prompts.
 
@@ -63,7 +63,12 @@ Each agent has a **persona** (role / communication / principle) and reads `memor
 - **What it does:** runs the real toolchain (`tsc`, `eslint`, dead-code, circular deps) then adds an RN-specific review (perf anti-patterns, hardcoded styles, testing/a11y gaps); writes a prioritized `tech-debt.md`.
 - **Principle:** run the real tools first, then add what tools can't see. Read-only.
 
-## The fourteen commands
+### 8. `federation-analyst` — mini-app candidate analysis
+- **Role:** pragmatic modularization architect.
+- **What it does:** scores each feature against federation criteria (native deps as a hard gate, coupling, startup-criticality, weight, update cadence) and recommends what to carve into remotes — or to stay single-bundle.
+- **Principle:** federation must earn its complexity; "no candidates" is a valid finding.
+
+## The fifteen commands
 
 Invoked with the plugin namespace: `/rn-repack-aidlc:<command>`.
 
@@ -83,6 +88,7 @@ Invoked with the plugin namespace: `/rn-repack-aidlc:<command>`.
 | `parity [source]` | Migration | Compares source-app surface vs mobile coverage; flags MISSING (migrations only) |
 | `audit [path]` | Quality | Toolchain (tsc/eslint/dead-code/cycles) + RN review → prioritized tech-debt report |
 | `reflect [intent]` | Quality | Read-only retrospective: what was built, friction, recommendations |
+| `federate [path]` | Architecture | Scores features vs federation criteria; recommends mini-app carves or single-bundle |
 
 Typical AI-DLC flow: `aidlc-init` → `setup-skills` → `aidlc-inception` → `bolt-start` (×N) → `operations`.
 

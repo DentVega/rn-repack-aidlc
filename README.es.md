@@ -10,7 +10,7 @@ Empaqueta los agentes y el flujo de AI-DLC, pre-carga los *standards* de un stac
 
 | Capa | Provisto por |
 |---|---|
-| **Proceso** (7 agentes, bolts, DDD, memory-bank) | Este plugin — AI-DLC adaptado de specs.md |
+| **Proceso** (8 agentes, bolts, DDD, memory-bank) | Este plugin — AI-DLC adaptado de specs.md |
 | **Build** | Re.Pack (webpack/Rspack + Module Federation v2) — documentado en los standards |
 | **Perf — escribir código (RN)** | `vercel-react-native-skills` (referenciada) |
 | **Perf — depurar (RN)** | `react-native-best-practices` (referenciada) |
@@ -31,7 +31,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 |---|---|---|
 | **Simple** | Cambio pequeño y bien entendido. Solo spec (requirements/design/tasks), sin seguimiento de ejecución. | `/simple-spec` |
 | **FIRE** | Feature mediana sobre una app Re.Pack existente (brownfield). Rápido, adaptativo, 0–2 checkpoints. | `/fire` |
-| **AI-DLC** | Remote federado nuevo / dominio complejo. 7 agentes, bolts, DDD, trazabilidad completa. | `/aidlc-inception` |
+| **AI-DLC** | Remote federado nuevo / dominio complejo. 8 agentes, bolts, DDD, trazabilidad completa. | `/aidlc-inception` |
 
 ## Agentes
 
@@ -42,6 +42,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 - `fire-executor` — flow FIRE: ejecución adaptativa, consciente de brownfield, con 0–2 checkpoints.
 - `parity-analyst` — análisis de gap de migración: compara la superficie del origen contra la cobertura mobile y marca lo que FALTA.
 - `code-auditor` — auditoría de deuda técnica: corre el toolchain (tsc/eslint/código muerto/deps circulares) + review RN-específico, escribe un reporte priorizado.
+- `federation-analyst` — puntúa cada feature contra criterios de federación y recomienda qué partes pueden ser mini-apps (o quedarse en bundle único).
 
 ## Comandos
 
@@ -61,6 +62,7 @@ specs.md ofrece tres flows. Todos reutilizan los mismos `memory-bank/standards/`
 - `/parity [origen]` — análisis de gap de migración: superficie del origen vs cobertura mobile, marca lo que FALTA.
 - `/audit [ruta]` — auditoría de deuda técnica / salud del código: toolchain + review RN → reporte priorizado.
 - `/reflect [intent]` — retrospectiva del ciclo: qué se construyó, fricciones, recomendaciones. Solo lectura.
+- `/federate [ruta]` — recomienda qué partes pueden ser mini-apps federadas (o quedarse en bundle único).
 
 ## Instalación
 
@@ -96,10 +98,10 @@ Guía paso a paso completa (tracks Expo y bare-RN): **[USAGE.es.md](USAGE.es.md)
 ```
 .claude-plugin/   plugin.json, marketplace.json
 agents/           aidlc-{master,inception,construction,operations}, fire-executor,
-                  parity-analyst, code-auditor
+                  parity-analyst, code-auditor, federation-analyst
 commands/         aidlc-init, setup-skills, repack-init, spec-flow, status,
                   simple-spec, fire, aidlc-inception, bolt-start, change,
-                  operations, parity, audit, reflect
+                  operations, parity, audit, reflect, federate
 skills/           i18n-doc-sync (incluida)
 scripts/          check-plugin.mjs (doctor), check-i18n-docs.mjs,
                   check-docs-commands.mjs, pre-commit
@@ -113,7 +115,7 @@ La skill incluida `i18n-doc-sync` está respaldada por un **guard duro**: `scrip
 
 ## Versionado
 
-Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **1.1.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
+Los cambios se registran en [CHANGELOG.md](CHANGELOG.md) siguiendo Keep a Changelog + SemVer. Versión actual: **1.2.0**. Las ideas diferidas y decisiones postergadas viven en [docs/DEFERRED.md](docs/DEFERRED.md).
 
 **Compromiso de estabilidad (1.0):** la superficie está congelada — los nombres/argumentos de comandos, los nombres de agentes y el layout de `memory-bank/` solo cambian en una versión mayor. Las features aditivas van en minors; los fixes en patches.
 

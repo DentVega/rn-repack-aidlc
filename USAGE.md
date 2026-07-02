@@ -66,6 +66,8 @@ Then `/bolt-start <first bolt>` and `/operations build`.
 
 > **Closing an intent?** Run `/reflect` for a read-only retrospective — what was built, which decisions held up, where the flow had friction, and recommended improvements (standards updates, process changes, deferred ideas). Retros are where the process improves.
 
+> **Host bundle getting heavy?** Run `/federate` — it scores each feature against Module Federation criteria (native deps, coupling, startup-criticality, weight) and recommends which parts could become mini-apps, or tells you plainly to stay single-bundle. The bridge between single-bundle and `/repack-init`.
+
 ## How to know it's working
 
 | Signal | Means |

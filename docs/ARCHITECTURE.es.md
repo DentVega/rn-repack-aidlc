@@ -2,7 +2,7 @@
 
 [English](ARCHITECTURE.md) · **Español**
 
-Un análisis a fondo de cómo está construido **rn-repack-aidlc**: los siete agentes, los catorce comandos, las nueve skills, y cómo encajan. Para *cómo usar* el plugin, ver [USAGE.es.md](../USAGE.es.md); para una vista rápida, el [README](../README.es.md).
+Un análisis a fondo de cómo está construido **rn-repack-aidlc**: los ocho agentes, los quince comandos, las nueve skills, y cómo encajan. Para *cómo usar* el plugin, ver [USAGE.es.md](../USAGE.es.md); para una vista rápida, el [README](../README.es.md).
 
 ## Modelo mental
 
@@ -25,7 +25,7 @@ Construction (CÓMO)      → por bolt: Model → Design → ADR → Implement �
 Operations               → build (Re.Pack) → Dev → Staging → Prod → monitoreo
 ```
 
-## Los siete agentes
+## Los ocho agentes
 
 Cada agente tiene una **persona** (rol / comunicación / principio) y lee `memory-bank/activeContext.md` + `progress.md` al iniciar. Están afinados desde los prompts canónicos de specs.md.
 
@@ -63,7 +63,12 @@ Cada agente tiene una **persona** (rol / comunicación / principio) y lee `memor
 - **Qué hace:** corre el toolchain real (`tsc`, `eslint`, código muerto, deps circulares) y agrega un review RN-específico (anti-patrones de perf, estilos hardcodeados, gaps de test/a11y); escribe un `tech-debt.md` priorizado.
 - **Principio:** corre las herramientas reales primero, luego agrega lo que no ven. Solo lectura.
 
-## Los catorce comandos
+### 8. `federation-analyst` — análisis de candidatos a mini-app
+- **Rol:** arquitecto pragmático de modularización.
+- **Qué hace:** puntúa cada feature contra criterios de federación (deps nativas como gate duro, acoplamiento, criticidad de arranque, peso, cadencia de updates) y recomienda qué tallar como remotes — o quedarse en bundle único.
+- **Principio:** la federación debe ganarse su complejidad; "sin candidatos" es un hallazgo válido.
+
+## Los quince comandos
 
 Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 
@@ -83,6 +88,7 @@ Se invocan con el namespace del plugin: `/rn-repack-aidlc:<comando>`.
 | `parity [origen]` | Migración | Compara superficie del origen vs cobertura mobile; marca FALTANTES (solo migraciones) |
 | `audit [ruta]` | Calidad | Toolchain (tsc/eslint/código muerto/ciclos) + review RN → reporte de deuda priorizado |
 | `reflect [intent]` | Calidad | Retrospectiva de solo lectura: qué se construyó, fricciones, recomendaciones |
+| `federate [ruta]` | Arquitectura | Puntúa features vs criterios de federación; recomienda tallar mini-apps o bundle único |
 
 Flujo AI-DLC típico: `aidlc-init` → `setup-skills` → `aidlc-inception` → `bolt-start` (×N) → `operations`.
 

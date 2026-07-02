@@ -6,6 +6,20 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.2.0] — 2026-07-02
+
+### Added
+- **Federation candidate analysis** — a `federation-analyst` agent + `/federate
+  [path]` command that scan the codebase, score each feature against Module
+  Federation criteria (native deps as a hard gate, coupling, startup-criticality,
+  weight, update cadence, ownership) and recommend which parts could become
+  federated mini-apps — writing `memory-bank/operations/federation-candidates.md`
+  with a first-carve recommendation, or an explicit "stay single-bundle" verdict
+  (federation must earn its complexity). Bridges the gap between the deliberate
+  single-bundle default and `/repack-init`: the plugin now helps decide *what*
+  to carve, not just *how*. The Operations OTA note suggests it for single-bundle
+  apps. Now 8 agents / 15 commands.
+
 ## [1.1.0] — 2026-07-02
 
 _First post-1.0 minor — every change here came from running `/reflect` on the
@@ -290,7 +304,8 @@ _Ideas adopted after reviewing [dynamicdevs/claudecode-aidlc-plugin](https://git
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.2.0
 [1.1.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.1.0
 [1.0.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.0.0
 [0.13.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.13.0

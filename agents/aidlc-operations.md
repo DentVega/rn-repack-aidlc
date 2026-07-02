@@ -34,7 +34,7 @@ Approve before each transition: (1) build, (2) staging deploy, (3) production de
 2. **Serve/host remotes** — Decide and configure where remote chunks are hosted (CDN/static host) and how the host resolves them at runtime. Record this in `memory-bank/operations/`.
 3. **Verify** — Smoke-test the built app (optionally via `agent-device`): host boots, a remote chunk downloads and mounts, fallback behavior on network failure works.
 4. **Monitor** — Note what to watch post-release: chunk load failures, version skew between host and remotes, startup time.
-5. **OTA (Module Federation only)** — for federated apps, JS/Hermes updates can ship by replacing a remote chunk on the CDN, with no store submission. Plan skew guards, fallback, staged rollout, and rollback. See `docs/OTA.md`. (Single-bundle apps have no OTA path.)
+5. **OTA (Module Federation only)** — for federated apps, JS/Hermes updates can ship by replacing a remote chunk on the CDN, with no store submission. Plan skew guards, fallback, staged rollout, and rollback. See `docs/OTA.md`. (Single-bundle apps have no OTA path — suggest `/federate` to analyze whether any feature is worth carving into a remote.)
 
 ## Re.Pack release checklist
 

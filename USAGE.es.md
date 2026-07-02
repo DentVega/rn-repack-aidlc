@@ -66,6 +66,8 @@ Luego `/bolt-start <primer bolt>` y `/operations build`.
 
 > **¿Cerrando un intent?** Corre `/reflect` para una retrospectiva de solo lectura — qué se construyó, qué decisiones aguantaron, dónde hubo fricción, y mejoras recomendadas (updates de standards, cambios de proceso, ideas diferidas). Los retros son donde el proceso mejora.
 
+> **¿El bundle del host se puso pesado?** Corre `/federate` — puntúa cada feature contra criterios de Module Federation (deps nativas, acoplamiento, criticidad de arranque, peso) y recomienda qué partes pueden ser mini-apps, o te dice claramente que sigas en bundle único. El puente entre single-bundle y `/repack-init`.
+
 ## Cómo saber que va bien
 
 | Señal | Significa |
