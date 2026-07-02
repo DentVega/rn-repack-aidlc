@@ -55,6 +55,13 @@ export default Repack.defineRspackConfig((env) => {
   };
 });
 
+// Mirror the host's shared list exactly (same libs, same versions). Shared deps
+// are negotiated through a global share scope at runtime, so mini-apps reuse
+// each other's copies (Re.Pack default: `loaded-first`).
+//
+// Slimming tip: for a dep the host is GUARANTEED to have loaded eagerly, a
+// remote can add `import: false` (consume-only — no fallback copy bundled),
+// shrinking its chunk. Trade-off: the remote then cannot load standalone.
 function sharedDeps(pkg, { eager }) {
   const dep = (name) => ({
     singleton: true,
@@ -69,5 +76,14 @@ function sharedDeps(pkg, { eager }) {
     '@react-navigation/native-stack': dep('@react-navigation/native-stack'),
     'react-native-safe-area-context': dep('react-native-safe-area-context'),
     'react-native-screens': dep('react-native-screens'),
+
+    // App-level shared singletons — keep in lockstep with the host's list.
+    // STATEFUL libs must be singletons (one QueryClient / store / i18n /
+    // session client across ALL mini-apps):
+    // '@tanstack/react-query': dep('@tanstack/react-query'),
+    // 'zustand': dep('zustand'),
+    // 'i18next': dep('i18next'),
+    // 'react-i18next': dep('react-i18next'),
+    // '@supabase/supabase-js': dep('@supabase/supabase-js'),
   };
 }

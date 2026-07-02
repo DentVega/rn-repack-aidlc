@@ -6,6 +6,25 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-07-02
+
+### Added
+- **Library sharing between mini-apps, first-class** — verified against the
+  official Re.Pack docs (global share scope, `loaded-first` default strategy,
+  auto-shared react/RN deep imports) and upgraded the templates accordingly:
+  - `templates/repack/*.mjs`: a commented **app-level shared singletons** block
+    (TanStack Query, Zustand, i18next, session client) with the rule that
+    **stateful libraries must be shared singletons** — a per-remote copy splits
+    caches/stores/sessions; plus a consume-only (`import: false`) slimming note
+    for remotes.
+  - `templates/repack/SETUP.md`: section rewritten as "Sharing libraries between
+    mini-apps" — share-scope semantics, stateful-singleton rule,
+    `strictVersion`, consume-only trade-off.
+  - `system-architecture.md` standard: shared-library rule (one identical
+    `shared` list across host and all remotes, stateful libs included).
+  - `federation-analyst`: its report now specifies which stateful libs the
+    candidates must add to `shared`.
+
 ## [1.2.0] — 2026-07-02
 
 ### Added
@@ -304,7 +323,8 @@ _Ideas adopted after reviewing [dynamicdevs/claudecode-aidlc-plugin](https://git
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.3.0
 [1.2.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.2.0
 [1.1.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.1.0
 [1.0.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.0.0

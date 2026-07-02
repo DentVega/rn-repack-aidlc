@@ -24,13 +24,26 @@ bundler commands at Re.Pack and that no `metro.config.js` is in effect.
 
 Replace the placeholders: `[HOST_NAME]`, `[REMOTE_NAME]`, `[REMOTE_PORT]`.
 
-## 3. Shared singletons (critical)
+## 3. Sharing libraries between mini-apps (critical)
 
-`react` and `react-native` (and navigation libs) are declared `singleton: true`
-in **both** host and remote. The **host** sets `eager: true` (loads them with the
-host bundle); each **remote** sets `eager: false` (reuses the host's copy). Keep
-the version lists identical across host and all remotes — a mismatch ships two
-copies of React and crashes at mount.
+Shared deps are negotiated through a **global share scope at runtime** — host
+and ALL remotes participate, so mini-apps reuse each other's copies too (Re.Pack
+defaults to the `loaded-first` strategy, and auto-shares `react`/`react-native`
+including deep imports).
+
+- `react`, `react-native`, and the navigation libs are `singleton: true` in
+  **both** host and remotes. The **host** sets `eager: true` (loads them with
+  the host bundle); each **remote** sets `eager: false` (reuses the loaded copy).
+- **Stateful libraries MUST also be shared singletons** — data-cache clients
+  (TanStack Query), stores (Zustand), i18n instances, auth/session clients.
+  A per-remote copy means separate caches/stores/sessions: subtle bugs plus
+  fatter chunks. Uncomment them in the templates' app-level block.
+- Keep the version lists **identical** across host and all remotes — a mismatch
+  ships two copies of React and crashes at mount. Add `strictVersion: true` to
+  fail fast instead of warning.
+- Optional slimming: a remote can mark a dep `import: false` (consume-only, no
+  fallback bundled) when the host is guaranteed to have it eager — smaller OTA
+  chunks, but the remote can no longer load standalone.
 
 ## 4. Run
 

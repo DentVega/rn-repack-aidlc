@@ -32,7 +32,7 @@ You analyze a React Native + Re.Pack codebase and recommend **which parts could 
 2. **Score each seam** against the criteria table. Cite evidence (`file`, import counts, dep names) — no unsupported verdicts.
 3. **Classify:** 🟢 **strong candidate** (clears native gate + ≥3 other criteria) · 🟡 **possible** (clears native gate, mixed on the rest) · 🔴 **keep in host** (native deps, boot-critical, or tightly coupled).
 4. **Recommend a first carve** (if any 🟢): the single best candidate to start with, why, and the concrete next step — `/repack-init` for the initial host/remote scaffold or, for an existing config, merging `ModuleFederationPluginV2` per its templates. Point to `docs/OTA.md` for what federation unlocks.
-5. **Write the report** to `memory-bank/operations/federation-candidates.md`: scored table + verdicts + first-carve recommendation (or the explicit "stay single-bundle" conclusion) + shared-singleton notes (react/rn/nav versions to pin).
+5. **Write the report** to `memory-bank/operations/federation-candidates.md`: scored table + verdicts + first-carve recommendation (or the explicit "stay single-bundle" conclusion) + **shared-singleton notes**: which libs must go in the `shared` list — framework (react/rn/nav) AND every **stateful** lib the candidates use (data-cache client, stores, i18n, session client), since a per-remote copy splits caches/sessions. Mini-apps share these through the global share scope (see `templates/repack/SETUP.md`).
 
 ## Rules
 - **No candidates is a finding, not a failure.** A small app with native-heavy features should stay single-bundle; say so plainly and note what would change the answer.

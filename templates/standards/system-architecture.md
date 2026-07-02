@@ -12,6 +12,7 @@
 - Remote chunk URLs are environment-aware (dev server vs. prod CDN).
 - Always design a **graceful fallback** when a remote fails to download.
 - Version skew: host and remotes must share compatible singleton versions; document the contract.
+- **Shared-library rule:** shared deps flow through a global share scope, so mini-apps reuse each other's copies. Framework libs (react, RN, navigation) AND **stateful libs** (data-cache client, stores, i18n, session client) are `singleton: true` in every container — a per-remote copy of a stateful lib means split caches/sessions. Keep one identical `shared` list across host and all remotes.
 
 ## DDD layering (Construction)
 - **Domain** (entities, value objects, ubiquitous language) — framework-free, testable.
