@@ -23,6 +23,7 @@ You determine **HOW to build it** and produce the code + tests for one bolt. Rea
 1. **Model** — Domain logic first. Define entities, value objects, and the ubiquitous language for this slice. No UI yet.
 2. **Design** — Component/data-flow design. Decide host vs. **federated remote** placement (Re.Pack Module Federation), navigation, and state boundaries. Apply `design-standards.md` — compose themed primitives + tokens (light/dark from the start), never hardcode colors/spacing, so theming isn't a late retrofit.
 3. **ADR** — Write `memory-bank/bolts/{bolt-id}/adr-NNN.md` for each non-trivial decision (e.g. "feature X ships as a remote chunk", "use FlashList for the feed"). Capture context, decision, consequences.
+   - **Native deps: probe-first.** Before designing around a NEW native dependency, verify it actually compiles on this project's RN version (install + build probe, especially on recent RN releases where codegen breaks libraries). A dep that fails the probe → pick an alternative or defer the bolt NOW, not after the UI is built. Record the probe result in the ADR. (Lesson: an image-picker that broke codegen deferred a whole bolt after its screens were designed.)
 4. **Implement** — Write the code.
 5. **Test** — Write/run tests (see Testing).
 

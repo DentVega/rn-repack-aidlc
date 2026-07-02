@@ -21,3 +21,7 @@
 - Logic & component behavior → Layer 1 (fast, runs in CI).
 - End-to-end flows, federation loading, native surfaces → Layer 2.
 - A bolt is "done" only when Layer 1 passes; run Layer 2 for user-facing flows before handing off to Operations.
+
+## Minimum per bolt (hard rule)
+- **Every screen bolt ships at least one RNTL component test** for its main screen/flow — a screen bolt without one is NOT done, even if `tsc` and the bundle are green. (Test debt drifts silently otherwise: a real 15-bolt cycle ended with zero component tests.)
+- Domain-logic bolts ship plain unit tests for their pure functions.

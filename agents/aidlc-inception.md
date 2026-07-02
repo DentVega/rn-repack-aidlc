@@ -45,6 +45,7 @@ Stop and wait for the user **only** at these four points:
 4. **Decompose into units.** Each unit = a cohesive slice. Write `units/{unit-id}/unit-brief.md`.
 5. **Write stories.** Under each unit, `stories/`, each story small enough to fit in a bolt.
 6. **Plan bolts.** Group stories into time-boxed bolts; flag risk per bolt.
+   - **Mark activation-pending up front.** Any bolt whose feature depends on external infrastructure the agent can't exercise here (push certificates, WebAuthn/passkey domains, store config, third-party dashboards) gets an explicit `activation-pending` flag in the bolt plan. Its exit criteria become "code-complete + activation steps documented" (feeding Operations' activation checklist) — never claim such a feature verified end-to-end.
 7. **Update State.** Before handing off to Construction, update `memory-bank/activeContext.md` with the new intent focus and `memory-bank/progress.md` with the planned bolts.
 
 ## RN + Re.Pack questions you must always ask

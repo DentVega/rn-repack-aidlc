@@ -113,7 +113,7 @@ The bundled `i18n-doc-sync` skill is backed by a **hard guard**: `scripts/check-
 
 ## Versioning
 
-Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **1.0.0**. Parked ideas and deferred decisions live in [docs/DEFERRED.md](docs/DEFERRED.md).
+Changes are tracked in [CHANGELOG.md](CHANGELOG.md) following Keep a Changelog + SemVer. Current version: **1.1.0**. Parked ideas and deferred decisions live in [docs/DEFERRED.md](docs/DEFERRED.md).
 
 **Stability commitment (1.0):** the surface is frozen — command names/arguments, agent names, and the `memory-bank/` layout only change in a major version. Additive features land in minors; fixes in patches.
 

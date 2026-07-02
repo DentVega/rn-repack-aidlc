@@ -1,6 +1,6 @@
 {
   "name": "rn-repack-aidlc",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Spec-driven development for React Native + Re.Pack using specs.md — all three flows (Simple, FIRE, AI-DLC). Bundles 5 agents, flow/bolt/DDD commands, RN+Re.Pack standards templates, a bundled i18n-doc-sync skill, and references 8 user-level RN/React skills (RN best-practices, Vercel RN rules, agent-device, React Native Testing Library, React best-practices, composition-patterns, github-actions, upgrading-react-native).",
   "author": {
     "name": "dentvega6",

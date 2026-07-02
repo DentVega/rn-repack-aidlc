@@ -6,6 +6,31 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.0] — 2026-07-02
+
+_First post-1.0 minor — every change here came from running `/reflect` on the
+Betmeet v2 cycle (the retro command producing plugin improvements on its first
+real use). All additive; the 1.0 surface is unchanged._
+
+### Added
+- **Native deps: probe-first** (`aidlc-construction`, ADR stage) — before
+  designing around a new native dependency, verify it compiles on the project's
+  RN version; a failed probe picks an alternative or defers NOW, recorded in the
+  ADR. (An image-picker that broke codegen deferred a whole bolt after its
+  screens were designed.)
+- **`activation-pending` flag** (`aidlc-inception`, bolt planning) — bolts that
+  depend on external infrastructure (push certs, WebAuthn domains, store
+  config) are flagged up front; their exit criteria become "code-complete +
+  activation steps documented", feeding the Operations activation checklist.
+- **Minimum test per bolt** (`testing-standards.md`) — every screen bolt ships
+  at least one RNTL component test or it is not done; domain bolts ship unit
+  tests. (A real 15-bolt cycle ended with zero component tests — test debt
+  drifts silently without a hard rule.)
+
+### Noted
+- The retro also suggested an Inception scope check (recommend `/simple-spec` /
+  `/fire` for small intents); not adopted for now.
+
 ## [1.0.0] — 2026-07-02
 
 **First stable release.** The plugin has completed a full cycle: built from
@@ -265,7 +290,8 @@ _Ideas adopted after reviewing [dynamicdevs/claudecode-aidlc-plugin](https://git
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.1.0
 [1.0.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.0.0
 [0.13.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.13.0
 [0.12.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v0.12.0
