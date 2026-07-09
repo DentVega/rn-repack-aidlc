@@ -10,8 +10,11 @@ Read and summarize from the Memory Bank:
 2. **`memory-bank/progress.md`** — overall status, bolts completed vs total, milestones, deferred/blocked tasks.
 3. **`memory-bank/intents/`** — which intents exist and which is active.
 
+Also read the plugin's own version from `${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json` (`version` field).
+
 Present a concise status:
 
+- **Plugin:** `rn-repack-aidlc v<version>`
 - **Intent:** `<active intent>` · **Phase:** `<Inception / Construction / Operations>`
 - **Bolts:** `<done>` / `<total>` — next: `<next bolt or action>`
 - **Blockers:** `<any, or "none">`

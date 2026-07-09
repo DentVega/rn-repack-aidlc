@@ -6,6 +6,14 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.4.0] — 2026-07-03
+
+### Added
+- **`/status` now reports the plugin's own version** (read from
+  `${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json`) as the first line of the
+  dashboard — answers "which version am I running?" without opening the
+  `/plugin` panel. Requested from real use.
+
 ## [1.3.1] — 2026-07-02
 
 ### Fixed
@@ -334,7 +342,8 @@ _Ideas adopted after reviewing [dynamicdevs/claudecode-aidlc-plugin](https://git
   `/aidlc-inception`, `/bolt-start`, `/setup-skills`, and the four
   `memory-bank/standards/` templates. References the four core callstack skills.
 
-[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.3.1...HEAD
+[Unreleased]: https://github.com/DentVega/rn-repack-aidlc/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.4.0
 [1.3.1]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.3.1
 [1.3.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.3.0
 [1.2.0]: https://github.com/DentVega/rn-repack-aidlc/releases/tag/v1.2.0
